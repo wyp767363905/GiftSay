@@ -14,10 +14,6 @@
 		BC7C5F8C1D61F14400A5672F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5F8A1D61F14400A5672F /* LaunchScreen.storyboard */; };
 		BC7C5F971D61F14400A5672F /* GiftSayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5F961D61F14400A5672F /* GiftSayTests.swift */; };
 		BC7C5FA21D61F14400A5672F /* GiftSayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FA11D61F14400A5672F /* GiftSayUITests.swift */; };
-		BC7C5FE01D61F1B700A5672F /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FB31D61F1B700A5672F /* CommunityViewController.swift */; };
-		BC7C5FE11D61F1B700A5672F /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FBA1D61F1B700A5672F /* CommunityViewController.swift */; };
-		BC7C5FE21D61F1B700A5672F /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FC01D61F1B700A5672F /* CommunityViewController.swift */; };
-		BC7C5FE31D61F1B700A5672F /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5FC61D61F1B700A5672F /* CommunityViewController.swift */; };
 		BC7C5FE41D61F1B700A5672F /* appicon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FCC1D61F1B700A5672F /* appicon29x29@2x.png */; };
 		BC7C5FE51D61F1B700A5672F /* appicon29x29@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FCD1D61F1B700A5672F /* appicon29x29@2x~ipad.png */; };
 		BC7C5FE61D61F1B700A5672F /* appicon29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FCE1D61F1B700A5672F /* appicon29x29@3x.png */; };
@@ -37,6 +33,8 @@
 		BC7C5FF41D61F1B700A5672F /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDD1D61F1B700A5672F /* LaunchImage-700@2x.png */; };
 		BC7C5FF51D61F1B700A5672F /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */; };
 		BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */; };
+		BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */; };
+		BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */; };
 		D71E4ABAB93FFEF18A0E13D9 /* Pods_GiftSay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F648819D8C4F136C26C3EFEE /* Pods_GiftSay.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +70,6 @@
 		BC7C5F9D1D61F14400A5672F /* GiftSayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftSayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7C5FA11D61F14400A5672F /* GiftSayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftSayUITests.swift; sourceTree = "<group>"; };
 		BC7C5FA31D61F14400A5672F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC7C5FB31D61F1B700A5672F /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		BC7C5FBA1D61F1B700A5672F /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		BC7C5FC01D61F1B700A5672F /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
-		BC7C5FC61D61F1B700A5672F /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		BC7C5FCC1D61F1B700A5672F /* appicon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon29x29@2x.png"; sourceTree = "<group>"; };
 		BC7C5FCD1D61F1B700A5672F /* appicon29x29@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon29x29@2x~ipad.png"; sourceTree = "<group>"; };
 		BC7C5FCE1D61F1B700A5672F /* appicon29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon29x29@3x.png"; sourceTree = "<group>"; };
@@ -95,6 +89,8 @@
 		BC7C5FDD1D61F1B700A5672F /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
 		BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CBCDBB2C8F33969022F26509 /* Pods-GiftSay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftSay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiftSay/Pods-GiftSay.debug.xcconfig"; sourceTree = "<group>"; };
 		F648819D8C4F136C26C3EFEE /* Pods_GiftSay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiftSay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,7 +210,6 @@
 		BC7C5FB21D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC7C5FB31D61F1B700A5672F /* CommunityViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -236,6 +231,8 @@
 		BC7C5FB61D61F1B700A5672F /* common */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */,
+				BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -261,7 +258,6 @@
 		BC7C5FB91D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC7C5FBA1D61F1B700A5672F /* CommunityViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -301,7 +297,6 @@
 		BC7C5FBF1D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC7C5FC01D61F1B700A5672F /* CommunityViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -341,7 +336,6 @@
 		BC7C5FC51D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC7C5FC61D61F1B700A5672F /* CommunityViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -627,12 +621,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC7C5FE11D61F1B700A5672F /* CommunityViewController.swift in Sources */,
 				BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */,
-				BC7C5FE31D61F1B700A5672F /* CommunityViewController.swift in Sources */,
+				BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */,
 				BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */,
-				BC7C5FE21D61F1B700A5672F /* CommunityViewController.swift in Sources */,
-				BC7C5FE01D61F1B700A5672F /* CommunityViewController.swift in Sources */,
+				BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

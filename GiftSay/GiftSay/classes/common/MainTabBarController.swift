@@ -1,14 +1,14 @@
 //
-//  CommunityViewController.swift
-//  TestKitchen
+//  MainTabBarController.swift
+//  GiftSay
 //
 //  Created by qianfeng on 16/8/15.
-//  Copyright © 2016年 1606. All rights reserved.
+//  Copyright © 2016年 qianfeng. All rights reserved.
 //
 
 import UIKit
 
-class CommunityViewController: BaseViewController {
+class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
