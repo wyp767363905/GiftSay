@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+target 'GiftSay' do
+	pod 'SnapKit', '~> 0.15.0'
+	pod 'Alamofire', '~> 3.4'
+	pod 'SwiftyJSON'
+	pod 'Kingfisher', '~> 2.4'
+	pod 'XWSwiftRefresh', '~> 0.1.9'
+end
+
