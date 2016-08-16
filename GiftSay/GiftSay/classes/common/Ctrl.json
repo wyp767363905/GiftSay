@@ -1,0 +1,22 @@
+[
+     {
+        "ctrlName":"GiftSayViewController"
+        "titleName":"礼物说",
+        "imageName":""
+     },
+     {
+        "ctrlName":"HotViewController"
+        "titleName":"热门",
+        "iamgeName":""
+     },
+     {
+        "ctrlName":"CategoryViewController"
+        "titleName":"分类",
+        "imageName":""
+     },
+     {
+        "ctrlName":"ProfileViewController"
+        "titelName":"我",
+        "imageName":""
+     }
+ ]

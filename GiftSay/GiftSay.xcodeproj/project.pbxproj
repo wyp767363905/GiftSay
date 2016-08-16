@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1693F21D6337BA0005F8AC /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1693F11D6337BA0005F8AC /* Const.swift */; };
 		BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5F811D61F14400A5672F /* AppDelegate.swift */; };
 		BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5F831D61F14400A5672F /* ViewController.swift */; };
 		BC7C5F871D61F14400A5672F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5F851D61F14400A5672F /* Main.storyboard */; };
@@ -35,6 +36,15 @@
 		BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */; };
 		BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */; };
 		BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */; };
+		BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */; };
+		BCF1F16F1D61FB8600A23285 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16E1D61FB8600A23285 /* HotViewController.swift */; };
+		BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1701D61FB9300A23285 /* CategoryViewController.swift */; };
+		BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1721D61FBA400A23285 /* ProfileViewController.swift */; };
+		BCF1F1751D61FC3200A23285 /* Ctrl.json in Resources */ = {isa = PBXBuildFile; fileRef = BCF1F1741D61FC3200A23285 /* Ctrl.json */; };
+		BCF1F1771D62057800A23285 /* UILabel+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1761D62057800A23285 /* UILabel+Util.swift */; };
+		BCF1F1791D62058E00A23285 /* UIButton+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1781D62058E00A23285 /* UIButton+Util.swift */; };
+		BCF1F17B1D6205ED00A23285 /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F17A1D6205ED00A23285 /* UIImageView+Util.swift */; };
+		BCF1F17D1D620CEF00A23285 /* WYPDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F17C1D620CEF00A23285 /* WYPDownloader.swift */; };
 		D71E4ABAB93FFEF18A0E13D9 /* Pods_GiftSay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F648819D8C4F136C26C3EFEE /* Pods_GiftSay.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		3690B1ADD1ACEDE27785B094 /* Pods-GiftSay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftSay.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiftSay/Pods-GiftSay.release.xcconfig"; sourceTree = "<group>"; };
+		BC1693F11D6337BA0005F8AC /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		BC7C5F7E1D61F14400A5672F /* GiftSay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftSay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7C5F811D61F14400A5672F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7C5F831D61F14400A5672F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +102,15 @@
 		BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftSayViewController.swift; sourceTree = "<group>"; };
+		BCF1F16E1D61FB8600A23285 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
+		BCF1F1701D61FB9300A23285 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		BCF1F1721D61FBA400A23285 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BCF1F1741D61FC3200A23285 /* Ctrl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ctrl.json; sourceTree = "<group>"; };
+		BCF1F1761D62057800A23285 /* UILabel+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Util.swift"; sourceTree = "<group>"; };
+		BCF1F1781D62058E00A23285 /* UIButton+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Util.swift"; sourceTree = "<group>"; };
+		BCF1F17A1D6205ED00A23285 /* UIImageView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
+		BCF1F17C1D620CEF00A23285 /* WYPDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYPDownloader.swift; sourceTree = "<group>"; };
 		CBCDBB2C8F33969022F26509 /* Pods-GiftSay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiftSay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiftSay/Pods-GiftSay.debug.xcconfig"; sourceTree = "<group>"; };
 		F648819D8C4F136C26C3EFEE /* Pods_GiftSay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiftSay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,6 +230,7 @@
 		BC7C5FB21D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1F1701D61FB9300A23285 /* CategoryViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -233,6 +254,12 @@
 			children = (
 				BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */,
 				BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */,
+				BCF1F1741D61FC3200A23285 /* Ctrl.json */,
+				BCF1F1761D62057800A23285 /* UILabel+Util.swift */,
+				BCF1F1781D62058E00A23285 /* UIButton+Util.swift */,
+				BCF1F17A1D6205ED00A23285 /* UIImageView+Util.swift */,
+				BCF1F17C1D620CEF00A23285 /* WYPDownloader.swift */,
+				BC1693F11D6337BA0005F8AC /* Const.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -258,6 +285,7 @@
 		BC7C5FB91D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -297,6 +325,7 @@
 		BC7C5FBF1D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1F16E1D61FB8600A23285 /* HotViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -336,6 +365,7 @@
 		BC7C5FC51D61F1B700A5672F /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCF1F1721D61FBA400A23285 /* ProfileViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -527,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF1F1751D61FC3200A23285 /* Ctrl.json in Resources */,
 				BC7C5FEF1D61F1B700A5672F /* appicon76x76~ipad.png in Resources */,
 				BC7C5FF11D61F1B700A5672F /* LaunchImage-700-568h@2x.png in Resources */,
 				BC7C5FE71D61F1B700A5672F /* appicon29x29~ipad.png in Resources */,
@@ -621,10 +652,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF1F17B1D6205ED00A23285 /* UIImageView+Util.swift in Sources */,
+				BCF1F17D1D620CEF00A23285 /* WYPDownloader.swift in Sources */,
+				BCF1F16F1D61FB8600A23285 /* HotViewController.swift in Sources */,
+				BCF1F1771D62057800A23285 /* UILabel+Util.swift in Sources */,
 				BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */,
+				BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */,
 				BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */,
+				BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */,
 				BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */,
+				BCF1F1791D62058E00A23285 /* UIButton+Util.swift in Sources */,
+				BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */,
 				BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */,
+				BC1693F21D6337BA0005F8AC /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
