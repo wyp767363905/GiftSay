@@ -14,6 +14,9 @@ public let kScreenHeight = UIScreen.mainScreen().bounds.size.height
 
 //礼物说
 //精选
+//小导航栏
+public let kGiftSaySmallNavBarUrl = "http://api.liwushuo.com/v2/channels/preset?gender=1&generation=3"
+
 //广告
 public let kGiftSayAdUrl = "http://api.liwushuo.com/v2/banners"
 

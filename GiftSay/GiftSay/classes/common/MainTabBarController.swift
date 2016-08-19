@@ -88,7 +88,7 @@ class MainTabBarController: UITabBarController {
             
             titleNames = ["礼物说","热门","分类","我"]
             
-            imageNames = ["","","",""]
+            imageNames = ["gift","hot","category","mine"]
             
         }
         
@@ -132,8 +132,8 @@ class MainTabBarController: UITabBarController {
             
             let titleName = titleNames[i]
             let imageName = imageNames[i]
-            let bgImageName = imageName
-            let selectBgImageName = imageName
+            let bgImageName = imageName + "_normal"
+            let selectBgImageName = imageName + "_select"
             let btn = UIButton.createBtn(nil, bgImageName: bgImageName, selectBgImageName: selectBgImageName, target: self, action: #selector(clickBtn(_:)))
             tabbarView?.addSubview(btn)
             

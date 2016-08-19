@@ -10,12 +10,8 @@ import UIKit
 
 import XWSwiftRefresh
 
-class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class BaseViewController: UIViewController {
 
-    lazy var dataArray = NSMutableArray()
-    
-    var tbView: UITableView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,14 +19,19 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.view.backgroundColor = UIColor.whiteColor()
         
-        createTableView()
-        
     }
     
     func addNavTitle(title: String){
         
         let titleLabel = UILabel.createLabel(title, textAlignment: .Center, font: UIFont.systemFontOfSize(24), textColor: UIColor.blackColor())
         navigationItem.titleView = titleLabel
+        
+        titleLabel.snp_makeConstraints { (make) in
+            make.top.equalTo(navigationItem.titleView!).offset(20)
+            make.bottom.equalTo(navigationItem.titleView!)
+            make.right.equalTo(navigationItem.titleView!).offset(0)
+            make.left.equalTo(navigationItem.titleView!).offset(0)
+        }
         
     }
     
@@ -61,37 +62,6 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    func createTableView(){
-        
-        automaticallyAdjustsScrollViewInsets = false
-        
-        tbView = UITableView(frame: CGRectMake(0, 64, kScreenWidth, kScreenHeight-64-49), style: .Plain)
-        tbView?.delegate = self
-        tbView?.dataSource = self
-        view.addSubview(tbView!)
-        
-        addFoot()
-        
-        addHead()
-        
-    }
-    
-    func addFoot(){
-        tbView?.footerView = XWRefreshAutoNormalFooter(target: self, action: #selector(loadNextPage))
-    }
-    
-    func loadNextPage(){
-        
-    }
-    
-    func addHead(){
-        tbView?.headerView = XWRefreshNormalHeader(target: self, action: #selector(loadFirstPage))
-    }
-    
-    func loadFirstPage(){
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,18 +80,6 @@ class BaseViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
 }
 
-//MARK: UITabelView代理
-extension BaseViewController{
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-}
 
 
 

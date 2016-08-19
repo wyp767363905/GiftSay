@@ -2,21 +2,21 @@
      {
         "ctrlName":"GiftSayViewController"
         "titleName":"礼物说",
-        "imageName":""
+        "imageName":"gift"
      },
      {
         "ctrlName":"HotViewController"
         "titleName":"热门",
-        "iamgeName":""
+        "iamgeName":"hot"
      },
      {
         "ctrlName":"CategoryViewController"
         "titleName":"分类",
-        "imageName":""
+        "imageName":"category"
      },
      {
         "ctrlName":"ProfileViewController"
         "titelName":"我",
-        "imageName":""
+        "imageName":"mine"
      }
- ]
+]
