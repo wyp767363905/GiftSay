@@ -25,7 +25,7 @@ class GSRecommendADCell: UITableViewCell {
     }
     
     func showData(){
-        
+                
         let containerView = UIView()
         scrollView.addSubview(containerView)
         

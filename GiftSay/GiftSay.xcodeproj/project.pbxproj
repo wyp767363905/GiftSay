@@ -13,6 +13,8 @@
 		BC080EF81D65E6C800E0502D /* GSSecondaryBannersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC080EF71D65E6C800E0502D /* GSSecondaryBannersModel.swift */; };
 		BC080EFE1D65F50500E0502D /* GSSecondaryBannersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC080EFD1D65F50500E0502D /* GSSecondaryBannersCell.swift */; };
 		BC1693F21D6337BA0005F8AC /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1693F11D6337BA0005F8AC /* Const.swift */; };
+		BC241E4A1D66F93A004FF30F /* GSSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC241E481D66F93A004FF30F /* GSSelectCell.swift */; };
+		BC241E4B1D66F93A004FF30F /* GSSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC241E491D66F93A004FF30F /* GSSelectCell.xib */; };
 		BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5F811D61F14400A5672F /* AppDelegate.swift */; };
 		BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C5F831D61F14400A5672F /* ViewController.swift */; };
 		BC7C5F871D61F14400A5672F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5F851D61F14400A5672F /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		BC7C5FF41D61F1B700A5672F /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDD1D61F1B700A5672F /* LaunchImage-700@2x.png */; };
 		BC7C5FF51D61F1B700A5672F /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */; };
 		BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */; };
+		BCCB4EA61D67E7C900791BF2 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4EA51D67E7C900791BF2 /* thumb_up.png */; };
+		BCD5122A1D66910700B09155 /* GSSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD512291D66910700B09155 /* GSSelectModel.swift */; };
 		BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */; };
 		BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */; };
 		BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */; };
@@ -109,6 +113,8 @@
 		BC080EF71D65E6C800E0502D /* GSSecondaryBannersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSecondaryBannersModel.swift; sourceTree = "<group>"; };
 		BC080EFD1D65F50500E0502D /* GSSecondaryBannersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSecondaryBannersCell.swift; sourceTree = "<group>"; };
 		BC1693F11D6337BA0005F8AC /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		BC241E481D66F93A004FF30F /* GSSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSelectCell.swift; sourceTree = "<group>"; };
+		BC241E491D66F93A004FF30F /* GSSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSSelectCell.xib; sourceTree = "<group>"; };
 		BC7C5F7E1D61F14400A5672F /* GiftSay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftSay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7C5F811D61F14400A5672F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7C5F831D61F14400A5672F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 		BC7C5FDD1D61F1B700A5672F /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
 		BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		BCCB4EA51D67E7C900791BF2 /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
+		BCD512291D66910700B09155 /* GSSelectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSelectModel.swift; sourceTree = "<group>"; };
 		BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftSayViewController.swift; sourceTree = "<group>"; };
@@ -467,6 +475,7 @@
 		BC7C5FCA1D61F1B700A5672F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB4EA21D67E63F00791BF2 /* thumbUp */,
 				BCFF427D1D6491B900DFBF5D /* tabbar */,
 				BCFF42501D6486EF00DFBF5D /* arrow */,
 				BCFF42561D6486EF00DFBF5D /* nav */,
@@ -509,6 +518,14 @@
 			path = LauchImages;
 			sourceTree = "<group>";
 		};
+		BCCB4EA21D67E63F00791BF2 /* thumbUp */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB4EA51D67E7C900791BF2 /* thumb_up.png */,
+			);
+			path = thumbUp;
+			sourceTree = "<group>";
+		};
 		BCFF424A1D644CFD00DFBF5D /* recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +549,7 @@
 				BCFF424E1D644D9E00DFBF5D /* GSRecommendModel.swift */,
 				BCFF429E1D64ACF800DFBF5D /* GSSmallNavBarModel.swift */,
 				BC080EF71D65E6C800E0502D /* GSSecondaryBannersModel.swift */,
+				BCD512291D66910700B09155 /* GSSelectModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -543,6 +561,8 @@
 				BC080EF31D65CAC500E0502D /* GSRecommendADCell.swift */,
 				BC080EF41D65CAC500E0502D /* GSRecommendADCell.xib */,
 				BC080EFD1D65F50500E0502D /* GSSecondaryBannersCell.swift */,
+				BC241E481D66F93A004FF30F /* GSSelectCell.swift */,
+				BC241E491D66F93A004FF30F /* GSSelectCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -756,8 +776,10 @@
 				BC7C5FEB1D61F1B700A5672F /* appicon40x40~ipad.png in Resources */,
 				BCFF42901D6491B900DFBF5D /* category_select@2x.png in Resources */,
 				BCFF42941D6491B900DFBF5D /* gift_select@2x.png in Resources */,
+				BC241E4B1D66F93A004FF30F /* GSSelectCell.xib in Resources */,
 				BC7C5F8C1D61F14400A5672F /* LaunchScreen.storyboard in Resources */,
 				BC7C5F891D61F14400A5672F /* Assets.xcassets in Resources */,
+				BCCB4EA61D67E7C900791BF2 /* thumb_up.png in Resources */,
 				BCFF426C1D6486EF00DFBF5D /* preload_image.png in Resources */,
 				BC7C5FF41D61F1B700A5672F /* LaunchImage-700@2x.png in Resources */,
 				BCFF429A1D6491B900DFBF5D /* mine_normal@2x.png in Resources */,
@@ -855,6 +877,7 @@
 				BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */,
 				BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */,
 				BC080EF81D65E6C800E0502D /* GSSecondaryBannersModel.swift in Sources */,
+				BCD5122A1D66910700B09155 /* GSSelectModel.swift in Sources */,
 				BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */,
 				BC080EFE1D65F50500E0502D /* GSSecondaryBannersCell.swift in Sources */,
 				BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */,
@@ -863,6 +886,7 @@
 				BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */,
 				BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */,
 				BCFF424F1D644D9E00DFBF5D /* GSRecommendModel.swift in Sources */,
+				BC241E4A1D66F93A004FF30F /* GSSelectCell.swift in Sources */,
 				BC1693F21D6337BA0005F8AC /* Const.swift in Sources */,
 				BC080EF21D65C99100E0502D /* GSRecommendView.swift in Sources */,
 			);

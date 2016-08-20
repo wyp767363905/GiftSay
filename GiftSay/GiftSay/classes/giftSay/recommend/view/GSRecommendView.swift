@@ -12,17 +12,11 @@ class GSRecommendView: UIView {
     
     private var tbView: UITableView?
     
-    var model: GSRecommendModel?{
-        
-        didSet {
-            
-            tbView?.reloadData()
-            
-        }
-        
-    }
+    var model: GSRecommendModel?
     
-    var secondaryBannersModel: GSSecondaryBannersModel?{
+    var secondaryBannersModel: GSSecondaryBannersModel?
+    
+    var selectModel: GSSelectModel? {
         
         didSet {
             
@@ -70,6 +64,9 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
             sectionNum += 1
         }
         
+        if selectModel?.data?.items?.count > 0 {
+            sectionNum += 1
+        }
         return sectionNum
     }
     
@@ -84,6 +81,10 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
         }else if section == 1 {
             if secondaryBannersModel?.data?.secondary_banners?.count > 0 {
                 rowNum = 1
+            }
+        }else if section == 2 {
+            if selectModel?.data?.items?.count > 0 {
+                rowNum += (selectModel?.data?.items?.count)!
             }
         }
         
@@ -102,6 +103,10 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
             if secondaryBannersModel?.data?.secondary_banners?.count > 0 {
                 heigeht = 100
             }
+        }else if indexPath.section == 2 {
+            if selectModel?.data?.items?.count > 0 {
+                heigeht = 230
+            }
         }
         
         return heigeht
@@ -113,10 +118,18 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
         
         if indexPath.section == 0 {
             if model?.data?.banners?.count > 0 {
+                
                 cell = GSRecommendADCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: model!)
             }
-        }else if secondaryBannersModel?.data?.secondary_banners?.count > 0 {
+        }else if (secondaryBannersModel?.data?.secondary_banners?.count > 0) && (indexPath.section == 1) {
+            
             cell = GSSecondaryBannersCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: secondaryBannersModel!)
+        }else if (selectModel?.data?.items?.count > 0) && (indexPath.section == 2) {
+            print("2")
+            let dataModel = selectModel?.data
+            let itemModel = dataModel?.items
+
+            cell = GSSelectCell.createSelectCellFor(tableView, atIndexPath: indexPath, withItemsModel: itemModel!)
         }
         
         return cell

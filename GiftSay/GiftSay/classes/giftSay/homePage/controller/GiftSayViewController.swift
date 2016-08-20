@@ -31,6 +31,8 @@ class GiftSayViewController: BaseViewController {
         
         downloaderSecondaryBannersData()
         
+        downloaderSelectData()
+        
     }
     
     func createHomePageView(){
@@ -45,6 +47,16 @@ class GiftSayViewController: BaseViewController {
             (make) in
             make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(64, 0, 49, 0))
         })
+        
+    }
+    
+    func downloaderSelectData() {
+        
+        let urlString = kGiftSaySelectUrl
+        let downloader = WYPDownloader()
+        downloader.type = 400
+        downloader.dalagate = self
+        downloader.downloaderWithUrlString(urlString)
         
     }
     
@@ -228,6 +240,12 @@ extension GiftSayViewController : WYPDownloaderDelegate {
                 
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.recommendView?.secondaryBannersModel = model
+                })
+            }else if downloader.type == 400 {
+                let model = GSSelectModel.parseModel(jsonData)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.recommendView?.selectModel = model
                 })
             }
         }
