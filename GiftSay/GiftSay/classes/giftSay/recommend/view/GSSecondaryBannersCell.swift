@@ -26,6 +26,10 @@ class GSSecondaryBannersCell: UITableViewCell {
     
     func showData(){
         
+        for subView in contentView.subviews {
+            subView.removeFromSuperview()
+        }
+        
         scrollView = UIScrollView()
         contentView.addSubview(scrollView!)
         

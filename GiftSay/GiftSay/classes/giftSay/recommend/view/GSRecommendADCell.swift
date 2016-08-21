@@ -25,7 +25,11 @@ class GSRecommendADCell: UITableViewCell {
     }
     
     func showData(){
-                
+        
+        for subView in scrollView.subviews {
+            subView.removeFromSuperview()
+        }
+        
         let containerView = UIView()
         scrollView.addSubview(containerView)
         

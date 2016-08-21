@@ -38,7 +38,7 @@ class BaseViewController: UIViewController {
     func addNavBtn(imageName: String, targer: AnyObject?, action: Selector, isLeft: Bool){
         
         let btn = UIButton.createBtn(nil, bgImageName: imageName, selectBgImageName: nil, target: targer, action: action)
-        btn.frame = CGRectMake(0, 4, 36, 36)
+        btn.frame = CGRectMake(0, 4, 20, 20)
         
         let barBtnItem = UIBarButtonItem(customView: btn)
         

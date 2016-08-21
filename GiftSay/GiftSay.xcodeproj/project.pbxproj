@@ -42,7 +42,12 @@
 		BC7C5FF51D61F1B700A5672F /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */; };
 		BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */; };
 		BCCB4EA61D67E7C900791BF2 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4EA51D67E7C900791BF2 /* thumb_up.png */; };
+		BCCB4EAC1D680FE400791BF2 /* HRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */; };
+		BCCB4EB01D68442C00791BF2 /* HMyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */; };
+		BCCB4EB31D6899CC00791BF2 /* HRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */; };
+		BCCB4EB41D6899CC00791BF2 /* HRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */; };
 		BCD5122A1D66910700B09155 /* GSSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD512291D66910700B09155 /* GSSelectModel.swift */; };
+		BCEAA0E21D694910006B53F7 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA0E11D694910006B53F7 /* favorite.png */; };
 		BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */; };
 		BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */; };
 		BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */; };
@@ -148,7 +153,12 @@
 		BC7C5FDE1D61F1B700A5672F /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		BC7C5FDF1D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		BCCB4EA51D67E7C900791BF2 /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
+		BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRecommendModel.swift; sourceTree = "<group>"; };
+		BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMyLayout.swift; sourceTree = "<group>"; };
+		BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRecommendCell.swift; sourceTree = "<group>"; };
+		BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRecommendCell.xib; sourceTree = "<group>"; };
 		BCD512291D66910700B09155 /* GSSelectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSelectModel.swift; sourceTree = "<group>"; };
+		BCEAA0E11D694910006B53F7 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftSayViewController.swift; sourceTree = "<group>"; };
@@ -388,6 +398,7 @@
 		BC7C5FBD1D61F1B700A5672F /* hot */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB4EA71D67FD8000791BF2 /* recommend */,
 				BC7C5FBE1D61F1B700A5672F /* homePage */,
 			);
 			path = hot;
@@ -521,9 +532,45 @@
 		BCCB4EA21D67E63F00791BF2 /* thumbUp */ = {
 			isa = PBXGroup;
 			children = (
+				BCEAA0E11D694910006B53F7 /* favorite.png */,
 				BCCB4EA51D67E7C900791BF2 /* thumb_up.png */,
 			);
 			path = thumbUp;
+			sourceTree = "<group>";
+		};
+		BCCB4EA71D67FD8000791BF2 /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB4EA81D67FD8000791BF2 /* controller */,
+				BCCB4EA91D67FD8000791BF2 /* model */,
+				BCCB4EAA1D67FD8000791BF2 /* view */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		BCCB4EA81D67FD8000791BF2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BCCB4EA91D67FD8000791BF2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BCCB4EAA1D67FD8000791BF2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */,
+				BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */,
+				BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		BCFF424A1D644CFD00DFBF5D /* recommend */ = {
@@ -778,6 +825,7 @@
 				BCFF42941D6491B900DFBF5D /* gift_select@2x.png in Resources */,
 				BC241E4B1D66F93A004FF30F /* GSSelectCell.xib in Resources */,
 				BC7C5F8C1D61F14400A5672F /* LaunchScreen.storyboard in Resources */,
+				BCEAA0E21D694910006B53F7 /* favorite.png in Resources */,
 				BC7C5F891D61F14400A5672F /* Assets.xcassets in Resources */,
 				BCCB4EA61D67E7C900791BF2 /* thumb_up.png in Resources */,
 				BCFF426C1D6486EF00DFBF5D /* preload_image.png in Resources */,
@@ -786,6 +834,7 @@
 				BCFF42681D6486EF00DFBF5D /* arrow_down.png in Resources */,
 				BCFF42931D6491B900DFBF5D /* gift_normal@3x.png in Resources */,
 				BCFF429B1D6491B900DFBF5D /* mine_normal@3x.png in Resources */,
+				BCCB4EB41D6899CC00791BF2 /* HRecommendCell.xib in Resources */,
 				BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				BCFF42991D6491B900DFBF5D /* hot_select@3x.png in Resources */,
 				BCFF429C1D6491B900DFBF5D /* mine_select@2x.png in Resources */,
@@ -874,6 +923,7 @@
 				BCF1F16F1D61FB8600A23285 /* HotViewController.swift in Sources */,
 				BCF1F1771D62057800A23285 /* UILabel+Util.swift in Sources */,
 				BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */,
+				BCCB4EB01D68442C00791BF2 /* HMyLayout.swift in Sources */,
 				BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */,
 				BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */,
 				BC080EF81D65E6C800E0502D /* GSSecondaryBannersModel.swift in Sources */,
@@ -882,11 +932,13 @@
 				BC080EFE1D65F50500E0502D /* GSSecondaryBannersCell.swift in Sources */,
 				BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */,
 				BCF1F1791D62058E00A23285 /* UIButton+Util.swift in Sources */,
+				BCCB4EB31D6899CC00791BF2 /* HRecommendCell.swift in Sources */,
 				BC080EF51D65CAC500E0502D /* GSRecommendADCell.swift in Sources */,
 				BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */,
 				BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */,
 				BCFF424F1D644D9E00DFBF5D /* GSRecommendModel.swift in Sources */,
 				BC241E4A1D66F93A004FF30F /* GSSelectCell.swift in Sources */,
+				BCCB4EAC1D680FE400791BF2 /* HRecommendModel.swift in Sources */,
 				BC1693F21D6337BA0005F8AC /* Const.swift in Sources */,
 				BC080EF21D65C99100E0502D /* GSRecommendView.swift in Sources */,
 			);

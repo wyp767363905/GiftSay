@@ -125,7 +125,6 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
             
             cell = GSSecondaryBannersCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: secondaryBannersModel!)
         }else if (selectModel?.data?.items?.count > 0) && (indexPath.section == 2) {
-            print("2")
             let dataModel = selectModel?.data
             let itemModel = dataModel?.items
 

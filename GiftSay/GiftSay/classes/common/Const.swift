@@ -29,4 +29,19 @@ public let kGiftSaySelectUrl = "http://api.liwushuo.com/v2/channels/102/items_v2
 //礼物
 public let kGiftSayGiftUrl = "http://api.liwushuo.com/v2/channels/111/items_v2?gender=1&generation=3&limit=20&offset=0"
 
+//热门
+public let kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
+
+//分类
+//攻略除了栏目以外的"http://api.liwushuo.com/v2/channel_groups/all"
+//栏目:"http://api.liwushuo.com/v2/columns?limit=11&offset=0"
+
+//单品:"http://api.liwushuo.com/v2/item_categories/tree"
+
+
+
+
+
+
+
 

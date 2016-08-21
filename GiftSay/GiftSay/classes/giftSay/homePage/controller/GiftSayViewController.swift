@@ -130,7 +130,6 @@ class GiftSayViewController: BaseViewController {
         }
         
         let containerView = UIView()
-        //containerView.backgroundColor = UIColor.blackColor()
         scrollView.addSubview(containerView)
         
         containerView.snp_makeConstraints { (make) in
