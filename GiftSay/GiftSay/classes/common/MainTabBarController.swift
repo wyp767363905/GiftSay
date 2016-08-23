@@ -124,7 +124,7 @@ class MainTabBarController: UITabBarController {
             (make) in
             make.left.right.equalTo(self!.view)
             make.bottom.equalTo(self!.view)
-            make.height.equalTo(44)
+            make.height.equalTo(49)
         })
         
         let width = kScreenWidth/4.0

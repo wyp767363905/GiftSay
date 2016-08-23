@@ -94,7 +94,7 @@ class GiftSayViewController: BaseViewController {
     
     //导航
     func createMyNav(){
-        
+                
         navigationController?.navigationBar.barTintColor = UIColor.redColor()
         
         addNavBtn("sign_in", targer: self, action: #selector(signInAction), isLeft: true)

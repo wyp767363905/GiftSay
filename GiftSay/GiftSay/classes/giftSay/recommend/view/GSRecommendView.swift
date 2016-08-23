@@ -12,9 +12,25 @@ class GSRecommendView: UIView {
     
     private var tbView: UITableView?
     
-    var model: GSRecommendModel?
+    var model: GSRecommendModel?{
+        
+        didSet {
+            
+            tbView?.reloadData()
+            
+        }
+        
+    }
     
-    var secondaryBannersModel: GSSecondaryBannersModel?
+    var secondaryBannersModel: GSSecondaryBannersModel?{
+        
+        didSet {
+            
+            tbView?.reloadData()
+            
+        }
+        
+    }
     
     var selectModel: GSSelectModel? {
         
@@ -40,7 +56,7 @@ class GSRecommendView: UIView {
         tbView?.snp_makeConstraints(closure: {
             [weak self]
             (make) in
-            make.edges.equalTo(self!)
+            make.edges.equalTo(self!).offset(UIEdgeInsetsMake(30, 0, 0, 0))
         })
         
     }

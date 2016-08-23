@@ -33,11 +33,16 @@ public let kGiftSayGiftUrl = "http://api.liwushuo.com/v2/channels/111/items_v2?g
 public let kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
 
 //分类
-//攻略除了栏目以外的"http://api.liwushuo.com/v2/channel_groups/all"
-//栏目:"http://api.liwushuo.com/v2/columns?limit=11&offset=0"
 
-//单品:"http://api.liwushuo.com/v2/item_categories/tree"
+//攻略
+//栏目
+public let kCategoryStrategyColumnUrl = "http://api.liwushuo.com/v2/columns?limit=11&offset=0"
 
+//除了栏目以外的
+public let kCategoryStrategyNoColumnUrl = "http://api.liwushuo.com/v2/channel_groups/all"
+
+//单品
+public let kCategoryItemUrl = "http://api.liwushuo.com/v2/item_categories/tree"
 
 
 

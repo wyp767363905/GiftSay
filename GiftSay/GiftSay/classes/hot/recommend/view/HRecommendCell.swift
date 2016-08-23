@@ -22,6 +22,10 @@ class HRecommendCell: UICollectionViewCell {
     
     func showData(){
         
+        backgroundColor = UIColor.whiteColor()
+        layer.cornerRadius = 5
+        clipsToBounds = true
+        
         for i in 0..<5 {
             
             let num = 200+i

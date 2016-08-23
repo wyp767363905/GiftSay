@@ -37,7 +37,7 @@ class HotViewController: BaseViewController {
         collView?.delegate = self
         collView?.dataSource = self
         
-        collView?.backgroundColor = UIColor.whiteColor()
+        collView?.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         
         let nib = UINib(nibName: "HRecommendCell", bundle: nil)
         self.collView?.registerNib(nib, forCellWithReuseIdentifier: "recommendHotCellId")
