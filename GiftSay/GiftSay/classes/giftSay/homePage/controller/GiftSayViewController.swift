@@ -101,6 +101,8 @@ class GiftSayViewController: BaseViewController {
         
         addNavBtn("search", targer: self, action: #selector(searchAction), isLeft: false)
         
+        
+        
     }
     
     func signInAction(){

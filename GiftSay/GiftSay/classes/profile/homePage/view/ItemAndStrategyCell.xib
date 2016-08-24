@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemAndStrategyCellId" id="KGk-i7-Jjw" customClass="ItemAndStrategyCell" customModule="GiftSay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="289"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Pm-A7v" userLabel="sheetBtn">
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="J78-xB-Qlx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="单品">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6q3-oT-diu"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15G-Z9-nEa" userLabel="strategyBtn">
+                        <rect key="frame" x="188" y="0.0" width="187" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="pe7-kV-TsI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="攻略">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6ci-cD-erX"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-fg-nrF" userLabel="noLoginBtn">
+                        <rect key="frame" x="0.0" y="40" width="375" height="249"/>
+                        <connections>
+                            <action selector="noLoginAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kgj-BF-9Iv"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noLogin_heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-Rw-edj" userLabel="noLoginImageView">
+                        <rect key="frame" x="165" y="120" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="1MA-Ag-vMh"/>
+                            <constraint firstAttribute="width" constant="45" id="PB5-G8-gpS"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlC-LQ-uKb" userLabel="noLoginLabel">
+                        <rect key="frame" x="20" y="165" width="335" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="J9D-J9-pVe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="TSs-fg-nrF" secondAttribute="bottom" id="1lD-h1-jRI"/>
+                    <constraint firstItem="TSs-fg-nrF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3FN-wb-8gz"/>
+                    <constraint firstItem="TSs-fg-nrF" firstAttribute="top" secondItem="15G-Z9-nEa" secondAttribute="bottom" id="4gF-hA-vxY"/>
+                    <constraint firstItem="xpl-Rw-edj" firstAttribute="centerX" secondItem="TSs-fg-nrF" secondAttribute="centerX" id="DHM-26-RyS"/>
+                    <constraint firstAttribute="trailing" secondItem="15G-Z9-nEa" secondAttribute="trailing" id="DKM-fE-pod"/>
+                    <constraint firstItem="15G-Z9-nEa" firstAttribute="leading" secondItem="3Vg-Pm-A7v" secondAttribute="trailing" id="Ddp-Q0-2Fv"/>
+                    <constraint firstItem="QlC-LQ-uKb" firstAttribute="top" secondItem="xpl-Rw-edj" secondAttribute="bottom" id="IBw-N9-N9A"/>
+                    <constraint firstItem="15G-Z9-nEa" firstAttribute="width" secondItem="3Vg-Pm-A7v" secondAttribute="width" id="YW0-zT-A2T"/>
+                    <constraint firstAttribute="trailing" secondItem="TSs-fg-nrF" secondAttribute="trailing" id="aX8-ek-bTr"/>
+                    <constraint firstItem="3Vg-Pm-A7v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fpx-Wj-LTp"/>
+                    <constraint firstAttribute="trailing" secondItem="QlC-LQ-uKb" secondAttribute="trailing" constant="20" id="jvd-1a-7lx"/>
+                    <constraint firstItem="3Vg-Pm-A7v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="msH-Kq-yKf"/>
+                    <constraint firstItem="QlC-LQ-uKb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="mw6-ge-I9w"/>
+                    <constraint firstItem="15G-Z9-nEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="t1e-cL-7ni"/>
+                    <constraint firstItem="xpl-Rw-edj" firstAttribute="top" secondItem="15G-Z9-nEa" secondAttribute="bottom" constant="80" id="ueh-ua-3kI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="noLoginLabel" destination="QlC-LQ-uKb" id="eQU-8O-0TO"/>
+            </connections>
+            <point key="canvasLocation" x="286.5" y="421"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="noLogin_heart.png" width="200" height="200"/>
+    </resources>
+</document>

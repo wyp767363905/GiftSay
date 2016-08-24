@@ -51,7 +51,7 @@ class HRecommendCell: UICollectionViewCell {
                 if num == 200 {
                     let url = NSURL(string: (dataModel?.cover_image_url)!)
                     let imageView = subView as! UIImageView
-                    imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                    imageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 }
                 
             }

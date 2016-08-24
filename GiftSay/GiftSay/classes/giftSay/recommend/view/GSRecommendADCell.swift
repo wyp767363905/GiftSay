@@ -48,7 +48,7 @@ class GSRecommendADCell: UITableViewCell {
                 let model = bannersArray![i]
                 let tmpImageView = UIImageView.createImageView(nil)
                 let url = NSURL(string: model.image_url!)
-                tmpImageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                tmpImageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 containerView.addSubview(tmpImageView)
                 
                 tmpImageView.snp_makeConstraints(closure: { (make) in

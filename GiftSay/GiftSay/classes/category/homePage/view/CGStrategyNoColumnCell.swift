@@ -40,7 +40,7 @@ class CGStrategyNoColumnCell: UITableViewCell {
                     if subView?.isKindOfClass(UIButton.self) == true {
                         let btn = subView as! UIButton
                         let url = NSURL(string: channelsModel.cover_image_url!)
-                        btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                        btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                     }
                 }
             }
@@ -76,7 +76,7 @@ class CGStrategyNoColumnCell: UITableViewCell {
                     if subView?.isKindOfClass(UIButton.self) == true {
                         let btn = subView as! UIButton
                         let url = NSURL(string: channelsModel.cover_image_url!)
-                        btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                        btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                     }
                 }
             }

@@ -58,11 +58,11 @@ class GSSelectCell: UITableViewCell {
                     let imageView = subView as! UIImageView
                     imageView.layer.cornerRadius = 10
                     imageView.clipsToBounds = true
-                    imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                    imageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 }else if num == 204 {
                     let url = NSURL(string: (itemsModel?.cover_image_url)!)
                     let imageView = subView as! UIImageView
-                    imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                    imageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 }
             }
             

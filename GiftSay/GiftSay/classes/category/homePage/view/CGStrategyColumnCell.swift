@@ -102,7 +102,7 @@ class CGStrategyColumnCell: UITableViewCell {
                 })
                 
                 let url = NSURL(string: columnsArray![i].banner_image_url!)
-                imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                imageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 
                 var lastLabel: UILabel? = nil
                 for j in 0..<3 {
