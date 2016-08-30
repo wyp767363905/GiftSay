@@ -20,7 +20,7 @@ class ItemAndStrategyCell: UITableViewCell {
         if subView?.isKindOfClass(UIImageView.self) == true {
             let imageView = subView as! UIImageView
             imageView.layer.borderWidth = 1
-            imageView.layer.borderColor = UIColor.lightGrayColor().CGColor
+            imageView.layer.borderColor = UIColor.whiteColor().CGColor
             imageView.layer.cornerRadius = 45/2
             imageView.clipsToBounds = true
         }

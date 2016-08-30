@@ -10,6 +10,8 @@ import UIKit
 
 class GSSelectCell: UITableViewCell {
     
+    var clickClosure: ADCellClosure?
+    
     //显示数据
     var model: GSSelectrDataModel?
     
@@ -62,6 +64,7 @@ class GSSelectCell: UITableViewCell {
                 }else if num == 204 {
                     let url = NSURL(string: (itemsModel?.cover_image_url)!)
                     let imageView = subView as! UIImageView
+                    imageView.userInteractionEnabled = false
                     imageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 }
             }
@@ -70,7 +73,7 @@ class GSSelectCell: UITableViewCell {
         
     }
     
-    class func createSelectCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withItemsModel itemsModel: [GSSelectItemsModel]) -> GSSelectCell {
+    class func createSelectCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withItemsModel itemsModel: [GSSelectItemsModel], clickClosure: ADCellClosure?) -> GSSelectCell {
         
         let cellId = "selectCellId"
         
@@ -80,6 +83,7 @@ class GSSelectCell: UITableViewCell {
             cell = NSBundle.mainBundle().loadNibNamed("GSSelectCell", owner: nil, options: nil).last as? GSSelectCell
         }
         
+        cell?.clickClosure = clickClosure
         cell?.itemsModel = itemsModel[indexPath.row]
         
         return cell!
@@ -87,6 +91,16 @@ class GSSelectCell: UITableViewCell {
     
     //点击进详情
     @IBAction func detailAction(sender: UIButton) {
+        
+        if sender.tag == 100 {
+            
+        }else if sender.tag == 101 {
+            
+        }else if sender.tag == 102 {
+            
+            clickClosure!("\((itemsModel?.id)!)", (itemsModel?.type)!, itemsModel?.url)
+        }
+        
     }
     
     //点赞

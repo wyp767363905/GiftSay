@@ -9,7 +9,10 @@
 import UIKit
 
 class GSRecommendADCell: UITableViewCell {
-
+    
+    //图片点击事件闭包
+    var clickClosure: ADCellClosure?
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -51,6 +54,12 @@ class GSRecommendADCell: UITableViewCell {
                 tmpImageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 containerView.addSubview(tmpImageView)
                 
+                //添加手势
+                tmpImageView.userInteractionEnabled = true
+                tmpImageView.tag = 500+i
+                let g = UITapGestureRecognizer(target: self, action: #selector(tapAction(_:)))
+                tmpImageView.addGestureRecognizer(g)
+                
                 tmpImageView.snp_makeConstraints(closure: { (make) in
                     make.top.bottom.equalTo(containerView)
                     make.width.equalTo(kScreenWidth)
@@ -79,7 +88,23 @@ class GSRecommendADCell: UITableViewCell {
         
     }
     
-    class func createADCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withModel model: GSRecommendModel) -> GSRecommendADCell {
+    func tapAction(g: UIGestureRecognizer){
+        
+        let index = (g.view?.tag)! - 500
+        
+        let model = bannersArray![index]
+        
+        if ((model.target_id?.isKindOfClass(NSNumber.self)) != nil) {
+            clickClosure!("\(model.target_id!)", model.type!, model.target_url)
+        }else{
+            clickClosure!(nil, model.type!, model.target_url)
+        }
+        
+        
+        
+    }
+    
+    class func createADCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withModel model: GSRecommendModel, clickClosure: ADCellClosure?) -> GSRecommendADCell {
         
         let cellId = "recommendADCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? GSRecommendADCell
@@ -87,6 +112,8 @@ class GSRecommendADCell: UITableViewCell {
             cell = NSBundle.mainBundle().loadNibNamed("GSRecommendADCell", owner: nil, options: nil).last as? GSRecommendADCell
         }
         cell?.bannersArray = model.data?.banners
+        
+        cell?.clickClosure = clickClosure
         
         return cell!
         

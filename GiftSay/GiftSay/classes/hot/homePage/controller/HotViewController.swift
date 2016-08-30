@@ -50,7 +50,7 @@ class HotViewController: BaseViewController {
         
         let urlString = kHotUrl
         let downloader = WYPDownloader()
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.downloaderWithUrlString(urlString)
         
     }
@@ -58,6 +58,8 @@ class HotViewController: BaseViewController {
     func createMyNav(){
         
         navigationController?.navigationBar.barTintColor = UIColor.redColor()
+        
+        addNavTitle("热门")
         
         addNavBtn("search", targer: self, action: #selector(searchAction), isLeft: false)
         
@@ -99,8 +101,9 @@ extension HotViewController: WYPDownloaderDelegate {
             
             dispatch_async(dispatch_get_main_queue(), {
                 
-                self.model = model
-                self.createLayout()
+                [weak self] in
+                self!.model = model
+                self!.createLayout()
                 
             })
             

@@ -18,7 +18,7 @@ protocol WYPDownloaderDelegate: NSObjectProtocol {
 
 class WYPDownloader: NSObject {
     
-    var dalagate: WYPDownloaderDelegate?
+    var delegate: WYPDownloaderDelegate?
     
     var type: Int?
     
@@ -33,14 +33,14 @@ class WYPDownloader: NSObject {
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             if let err = error {
-                self.dalagate?.downloader(self, didFailWithError: err)
+                self.delegate?.downloader(self, didFailWithError: err)
             }else{
                 let httpRes = response as! NSHTTPURLResponse
                 if httpRes.statusCode == 200 {
-                    self.dalagate?.downloader(self, didFinishWithData: data)
+                    self.delegate?.downloader(self, didFinishWithData: data)
                 }else{
                     let error = NSError(domain: UrlString, code: httpRes.statusCode, userInfo: ["msg":"下载失败"])
-                    self.dalagate?.downloader(self, didFailWithError: error)
+                    self.delegate?.downloader(self, didFailWithError: error)
                 }
             }
             

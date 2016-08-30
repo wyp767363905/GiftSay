@@ -48,7 +48,7 @@ class CategoryViewController: BaseViewController {
         
         let urlString = kCategoryStrategyNoColumnUrl
         let downloader = WYPDownloader()
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.type = 200
         downloader.downloaderWithUrlString(urlString)
         
@@ -58,7 +58,7 @@ class CategoryViewController: BaseViewController {
         
         let urlString = kCategoryStrategyColumnUrl
         let downloader = WYPDownloader()
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.type = 100
         downloader.downloaderWithUrlString(urlString)
         
@@ -106,13 +106,15 @@ extension CategoryViewController : WYPDownloaderDelegate {
                 let model = CGStrategyColumnModel.parseModel(jsonData)
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.categoryView?.columnModel = model
+                    [weak self] in
+                    self!.categoryView?.columnModel = model
                 })
             }else if downloader.type == 200 {
                 let model = CGStrategyNoColumnModel.parseModel(jsonData)
                 
-                dispatch_async(dispatch_get_main_queue(), { 
-                    self.categoryView?.noColumnModel = model
+                dispatch_async(dispatch_get_main_queue(), {
+                    [weak self] in
+                    self!.categoryView?.noColumnModel = model
                 })
             }
         }

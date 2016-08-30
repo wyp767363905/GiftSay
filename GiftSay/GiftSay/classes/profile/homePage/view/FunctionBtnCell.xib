@@ -15,35 +15,30 @@
                 <subviews>
                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIk-Of-YYR" userLabel="firstBtn">
                         <rect key="frame" x="0.0" y="0.0" width="75" height="79"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O9c-I5-wrs"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-Hg-YMi" userLabel="secondBtn">
                         <rect key="frame" x="75" y="0.0" width="75" height="79"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gmZ-Ap-Ctr"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRt-Fm-HPt" userLabel="thirdBtn">
                         <rect key="frame" x="150" y="0.0" width="75" height="79"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dKg-or-zmA"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-vF-qpY" userLabel="fourthBtn">
                         <rect key="frame" x="225" y="0.0" width="75" height="79"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ilt-MK-Ht6"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-vx-xV3" userLabel="fifthBtn">
                         <rect key="frame" x="300" y="0.0" width="75" height="79"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bJH-nb-Ihc"/>
                         </connections>

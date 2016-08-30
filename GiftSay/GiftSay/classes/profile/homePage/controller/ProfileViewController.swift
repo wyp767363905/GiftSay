@@ -25,6 +25,8 @@ class ProfileViewController: BaseViewController {
     
     func createTableView(){
         
+        automaticallyAdjustsScrollViewInsets = false
+        
         tbView = UITableView()
         tbView?.delegate = self
         tbView?.dataSource = self
@@ -33,7 +35,7 @@ class ProfileViewController: BaseViewController {
         tbView?.snp_makeConstraints(closure: {
             [weak self]
             (make) in
-            make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(0, 0, 0, 49))
+            make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(-64, 0, 49, 0))
         })
         
     }
@@ -110,13 +112,29 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
         return 3
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var h: CGFloat = 0
+        
+        if indexPath.row == 0 {
+            h = 300
+        }else if indexPath.row == 1 {
+            h = 80
+        }else if indexPath.row == 2 {
+            h = 300
+        }
+        
+        return h
+        
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             let cellId = "profileLoginCellId"
             var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? ProfileLoginCell
             if nil == cell {
-                cell = ProfileLoginCell(style: .Default, reuseIdentifier: cellId)
+                cell = NSBundle.mainBundle().loadNibNamed("ProfileLoginCell", owner: nil, options: nil).last as? ProfileLoginCell
             }
             cell?.configModel()
             return cell!
@@ -124,7 +142,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
             let cellId = "functionBtnCellId"
             var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? FunctionBtnCell
             if nil == cell {
-                cell = FunctionBtnCell(style: .Default, reuseIdentifier: cellId)
+                cell = NSBundle.mainBundle().loadNibNamed("FunctionBtnCell", owner: nil, options: nil).last as? FunctionBtnCell
             }
             cell?.configModel()
             return cell!
@@ -132,7 +150,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
             let cellId = "itemAndStrategyCellId"
             var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? ItemAndStrategyCell
             if nil == cell {
-                cell = ItemAndStrategyCell(style: .Default, reuseIdentifier: cellId)
+                cell = NSBundle.mainBundle().loadNibNamed("ItemAndStrategyCell", owner: nil, options: nil).last as? ItemAndStrategyCell
             }
             cell?.configModel()
             return cell!

@@ -12,8 +12,6 @@ import SnapKit
 
 import Kingfisher
 
-import XWSwiftRefresh
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

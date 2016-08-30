@@ -10,7 +10,13 @@ import UIKit
 
 class GSRecommendView: UIView {
     
-    private var tbView: UITableView?
+    var clickClosure: ADCellClosure?
+    
+    var tbView: UITableView?
+    
+    var dataArray = Array<GSSelectItemsModel>()
+    
+    var number: Int?
     
     var model: GSRecommendModel?{
         
@@ -36,7 +42,16 @@ class GSRecommendView: UIView {
         
         didSet {
             
-            tbView?.reloadData()
+            if number == 0 {
+                dataArray.removeAll()
+            }
+            if selectModel?.data?.items?.count > 0 {
+                for item in (selectModel?.data?.items)! {
+                    dataArray.append(item)
+                }
+                tbView?.reloadData()
+                
+            }
             
         }
         
@@ -49,6 +64,7 @@ class GSRecommendView: UIView {
         tbView?.delegate = self
         tbView?.dataSource = self
         
+        //分界线
         tbView?.separatorStyle = .None
         
         addSubview(tbView!)
@@ -56,7 +72,7 @@ class GSRecommendView: UIView {
         tbView?.snp_makeConstraints(closure: {
             [weak self]
             (make) in
-            make.edges.equalTo(self!).offset(UIEdgeInsetsMake(30, 0, 0, 0))
+            make.edges.equalTo(self!)
         })
         
     }
@@ -80,7 +96,7 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
             sectionNum += 1
         }
         
-        if selectModel?.data?.items?.count > 0 {
+        if dataArray.count > 0 {
             sectionNum += 1
         }
         return sectionNum
@@ -99,8 +115,8 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
                 rowNum = 1
             }
         }else if section == 2 {
-            if selectModel?.data?.items?.count > 0 {
-                rowNum += (selectModel?.data?.items?.count)!
+            if dataArray.count > 0 {
+                rowNum += dataArray.count
             }
         }
         
@@ -120,7 +136,7 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
                 heigeht = 100
             }
         }else if indexPath.section == 2 {
-            if selectModel?.data?.items?.count > 0 {
+            if dataArray.count > 0 {
                 heigeht = 230
             }
         }
@@ -135,16 +151,16 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
         if indexPath.section == 0 {
             if model?.data?.banners?.count > 0 {
                 
-                cell = GSRecommendADCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: model!)
+                cell = GSRecommendADCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: model!, clickClosure: clickClosure)
             }
         }else if (secondaryBannersModel?.data?.secondary_banners?.count > 0) && (indexPath.section == 1) {
             
             cell = GSSecondaryBannersCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: secondaryBannersModel!)
-        }else if (selectModel?.data?.items?.count > 0) && (indexPath.section == 2) {
-            let dataModel = selectModel?.data
-            let itemModel = dataModel?.items
+        }else if (dataArray.count > 0) && (indexPath.section == 2) {
+//            let dataModel = selectModel?.data
+//            let itemModel = dataModel?.items
 
-            cell = GSSelectCell.createSelectCellFor(tableView, atIndexPath: indexPath, withItemsModel: itemModel!)
+            cell = GSSelectCell.createSelectCellFor(tableView, atIndexPath: indexPath, withItemsModel: dataArray, clickClosure: clickClosure)
         }
         
         return cell

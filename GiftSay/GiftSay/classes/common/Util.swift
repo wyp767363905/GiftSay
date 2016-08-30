@@ -16,9 +16,7 @@ public enum ChannelGroupsType: Int {
     
 }
 
-
-
-
+public typealias ADCellClosure = (String?,String,String?) -> Void
 
 
 

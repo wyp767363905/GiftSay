@@ -8,24 +8,183 @@
 
 import UIKit
 
+import XWSwiftRefresh
+
 class GiftSayViewController: BaseViewController {
     
     private var recommendView: GSRecommendView?
     
-    private var candidatesArray: Array<GSSmallNavBarCandidatesModel>?
+    private var otherView: GSOtherView?
+    
+    private var candidatesArray: Array<GSSmallNavBarChannelsModel>?
     
     private var nextBtn: UIButton?
+    
+    var scrollView: UIScrollView?
+    
+    private lazy var otherArray = NSMutableArray()
+    
+    var num: NSNumber = 102
+    
+    var smallScrollView: UIScrollView?
+    
+    var giftType: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         createMyNav()
         
-        createHomePageView()
-        
         downloaderSmallNavBarData()
+        
+    }
+    
+    //在这是下载出来的是除了精选之外的瞎子情况?
+    func downloaderOtherData(){
+        
+        for i in 0..<otherArray.count {
+            
+            let urlString = String(format: kGiftSaySelectUrl, "\(otherArray[i])")
+            let downloader = WYPDownloader()
+            downloader.type = 500+i
+            downloader.delegate = self
+            downloader.downloaderWithUrlString(urlString)
+        
+        }
+        
+    }
+    
+    //创建首页整页的滚动视图
+    func createHomePageView(){
+        
+        automaticallyAdjustsScrollViewInsets = false
+        
+        scrollView = UIScrollView()
+        scrollView?.pagingEnabled = true
+        scrollView?.showsHorizontalScrollIndicator = false
+        scrollView?.delegate = self
+        view.addSubview(scrollView!)
+        
+        scrollView?.snp_makeConstraints(closure: {
+            [weak self]
+            (make) in
+            make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(94, 0, 49, 0))
+        })
+        
+        let containerView = UIView()
+        scrollView?.addSubview(containerView)
+        
+        containerView.snp_makeConstraints { (make) in
+            make.edges.equalTo(scrollView!)
+            make.height.equalTo(scrollView!)
+        }
+        
+        //精选视图(特殊)
+        recommendView = GSRecommendView()
+        containerView.addSubview(recommendView!)
+        
+        recommendView?.snp_makeConstraints(closure: { (make) in
+            make.top.bottom.equalTo(containerView)
+            make.width.equalTo(kScreenWidth)
+            make.left.equalTo(containerView)
+        })
+        
+        //其他视图是一样的
+        var lastView: UIView? = nil
+        if otherArray.count > 0 {
+            for i in 0..<otherArray.count {
+                otherView = GSOtherView()
+                containerView.addSubview(otherView!)
+                
+                otherView?.snp_makeConstraints(closure: { (make) in
+                    make.top.bottom.equalTo(containerView)
+                    make.width.equalTo(kScreenWidth)
+                    if i == 0 {
+                        make.left.equalTo((recommendView?.snp_right)!)
+                    }else{
+                        make.left.equalTo((lastView?.snp_right)!)
+                    }
+                })
+                
+                otherView?.tag = 800+i
+                
+                lastView = otherView
+                
+            }
+            
+            containerView.snp_makeConstraints(closure: { (make) in
+                make.right.equalTo(lastView!)
+            })
+            
+        }
+        
+        addFoot()
+        
+        addHead()
+        
+    }
+    
+    //上拉
+    func addFoot(){
+        
+        recommendView?.tbView?.footerView = XWRefreshAutoNormalFooter(target: self, action: #selector(loadNextPage))
+//        for i in 0..<otherArray.count {
+//            otherView?.tbView?.footerView = XWRefreshAutoNormalFooter(target: self, action: #selector(nextPage))
+//
+//        }
+        
+    }
+    
+    func nextPage(){
+        
+        giftType = 1
+        
+        otherView?.number = giftType
+        
+        kGiftSaySelectUrl = (otherView?.otherModel?.data?.paging?.next_url)!
+        
+    }
+    
+    func loadNextPage(){
+        
+        giftType = 1
+        
+        recommendView?.number = giftType
+        
+        kGiftSaySelectUrl = (recommendView?.selectModel?.data?.paging?.next_url)!
+        
+        downloaderSelectData()
+        
+    }
+    
+    //下拉
+    func addHead(){
+        
+        recommendView?.tbView?.headerView = XWRefreshNormalHeader(target: self, action: #selector(loadFirstPage))
+        
+        //otherView?.tbView?.headerView = XWRefreshNormalHeader(target: self, action: #selector(firstPage))
+        
+    }
+    
+    func firstPage(){
+        
+        giftType = 0
+        
+        otherView?.number = giftType
+        
+        kGiftSaySelectUrl = "http://api.liwushuo.com/v2/channels/%@/items_v2?ad=2&gender=1&generation=3&limit=20&offset=0"
+        
+    }
+    
+    func loadFirstPage(){
+        
+        giftType = 0
+        
+        recommendView?.number = giftType
+        
+        kGiftSaySelectUrl = "http://api.liwushuo.com/v2/channels/%@/items_v2?ad=2&gender=1&generation=3&limit=20&offset=0"
         
         downloaderAdData()
         
@@ -33,39 +192,36 @@ class GiftSayViewController: BaseViewController {
         
         downloaderSelectData()
         
-    }
-    
-    func createHomePageView(){
+        downloaderOtherData()
         
-        automaticallyAdjustsScrollViewInsets = false
-        
-        recommendView = GSRecommendView()
-        view.addSubview(recommendView!)
-        
-        recommendView?.snp_makeConstraints(closure: {
-            [weak self]
-            (make) in
-            make.edges.equalTo(self!.view).inset(UIEdgeInsetsMake(64, 0, 49, 0))
-        })
+        downloaderSelectData()
         
     }
     
+    //精选
     func downloaderSelectData() {
         
-        let urlString = kGiftSaySelectUrl
+        var urlString = ""
+        
+        if giftType == 0 {
+            urlString = String(format: kGiftSaySelectUrl, num)
+        }else if giftType == 1 {
+            urlString = kGiftSaySelectUrl
+        }
         let downloader = WYPDownloader()
         downloader.type = 400
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.downloaderWithUrlString(urlString)
         
     }
     
+    //次要的横幅
     func downloaderSecondaryBannersData() {
         
         let urlString = kGiftSayBannersUrl
         let downloader = WYPDownloader()
         downloader.type = 300
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.downloaderWithUrlString(urlString)
         
     }
@@ -76,7 +232,7 @@ class GiftSayViewController: BaseViewController {
         let urlString = kGiftSayAdUrl
         let downloader = WYPDownloader()
         downloader.type = 200
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.downloaderWithUrlString(urlString)
         
     }
@@ -87,15 +243,17 @@ class GiftSayViewController: BaseViewController {
         let urlString = kGiftSaySmallNavBarUrl
         let downloader = WYPDownloader()
         downloader.type = 100
-        downloader.dalagate = self
+        downloader.delegate = self
         downloader.downloaderWithUrlString(urlString)
         
     }
     
     //导航
     func createMyNav(){
-                
+        
         navigationController?.navigationBar.barTintColor = UIColor.redColor()
+        
+        addNavTitle("礼物说")
         
         addNavBtn("sign_in", targer: self, action: #selector(signInAction), isLeft: true)
         
@@ -118,11 +276,12 @@ class GiftSayViewController: BaseViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         
-        let scrollView = UIScrollView()
-        scrollView.showsHorizontalScrollIndicator = false
-        view.addSubview(scrollView)
+        smallScrollView = UIScrollView()
+        smallScrollView?.showsHorizontalScrollIndicator = false
+        view.addSubview(smallScrollView!)
         
-        scrollView.snp_makeConstraints {
+        //滚动视图约束
+        smallScrollView?.snp_makeConstraints {
             [weak self]
             (make) in
             make.top.equalTo(self!.view).offset(64)
@@ -131,13 +290,24 @@ class GiftSayViewController: BaseViewController {
             make.height.equalTo(30)
         }
         
-        let containerView = UIView()
-        scrollView.addSubview(containerView)
+        let smallContainerView = UIView()
+        smallContainerView.tag = 10
+        smallScrollView?.addSubview(smallContainerView)
         
-        containerView.snp_makeConstraints { (make) in
-            make.edges.equalTo(scrollView)
-            make.height.equalTo(scrollView)
+        //容器视图约束
+        smallContainerView.snp_makeConstraints {
+            [weak self]
+            (make) in
+            make.edges.equalTo(self!.smallScrollView!)
+            make.height.equalTo(self!.smallScrollView!)
         }
+        
+        createBtnAndAlterView(smallContainerView)
+        
+    }
+    
+    //创建小导航栏上面的按钮并修改容器视图
+    func createBtnAndAlterView(smallContainerView: UIView) {
         
         var lastBtn: UIButton? = nil
         let cnt = candidatesArray?.count
@@ -151,13 +321,13 @@ class GiftSayViewController: BaseViewController {
                 tmpBtn.titleLabel?.font = UIFont.systemFontOfSize(13)
                 let nameStr = NSString(string: model.name!)
                 let tmpBtnRect = nameStr.boundingRectWithSize(CGSizeMake(CGFloat.max, tmpBtn.frame.size.height), options: .TruncatesLastVisibleLine, attributes: dict, context: nil)
-                tmpBtn.frame.size.width = tmpBtnRect.size.width
-                containerView.addSubview(tmpBtn)
+                smallContainerView.addSubview(tmpBtn)
                 
                 tmpBtn.snp_makeConstraints(closure: { (make) in
-                    make.top.bottom.equalTo(containerView)
+                    make.top.bottom.equalTo(smallContainerView)
+                    make.width.equalTo(tmpBtnRect.size.width)
                     if i == 0 {
-                        make.left.equalTo(containerView).offset(10)
+                        make.left.equalTo(smallContainerView).offset(10)
                     }else{
                         make.left.equalTo((lastBtn?.snp_right)!).offset(10)
                     }
@@ -173,17 +343,22 @@ class GiftSayViewController: BaseViewController {
                 
             }
             
-            containerView.snp_makeConstraints(closure: {
+            //修改容器视图约束
+            smallContainerView.snp_makeConstraints(closure: {
                 (make) in
                 make.right.equalTo((lastBtn?.snp_right)!).offset(10)
             })
             
         }
-        
+
     }
     
+    //小导航栏按钮的点击事件
     func clickBtn(tmpBtn: UIButton){
         
+        let index = tmpBtn.tag - 1000
+        
+        //点击选中情况
         if nextBtn != nil {
             nextBtn?.selected = false
             nextBtn?.setTitleColor(UIColor.blackColor(), forState: .Normal)
@@ -191,7 +366,98 @@ class GiftSayViewController: BaseViewController {
             tmpBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
         }
         
+        UIView.beginAnimations("donghua", context: nil)
+        UIView.setAnimationDuration(0.5)
+        UIView.setAnimationRepeatCount(1)
+        UIView.setAnimationDelegate(self)
+        scrollView?.contentOffset = CGPointMake(kScreenWidth*CGFloat(index), 0)
+        let subView = smallScrollView?.viewWithTag(1000+index+1)
+        let sub = smallScrollView?.viewWithTag(10)
+        if sub?.isKindOfClass(UIView.self) == true {
+            //获取容器视图
+            let smallContainerView = sub! as UIView
+            if subView?.isKindOfClass(UIButton.self) == true {
+                //获取被选中按钮的下一个按钮
+                let btn = subView as! UIButton
+                /*
+                 1.根据选中的btn判断下一个btn是否有部分隐藏在滚动视图里面,如果存在就移动当前的btn
+                 2.判断当前按钮所能移动的位置是不是大于滚动视图视图宽度的一半
+                 */
+                if ((btn.frame.origin.x+btn.frame.size.width) > smallScrollView?.frame.size.width) && ((smallContainerView.bounds.size.width-tmpBtn.frame.origin.x-(tmpBtn.frame.size.width)/2) > ((smallScrollView?.bounds.size.width)!/2)) {
+                    //计算按钮的偏移量
+                    let mobileSize = (tmpBtn.frame.origin.x-((smallScrollView?.frame.size.width)!/2))+(tmpBtn.frame.size.width/2)
+                    //判断如果设置正常的偏移量再加上滚动视图的宽度是否大于容器的宽度如果大于那么
+                    if ((mobileSize+(smallScrollView?.bounds.size.width)!) > smallContainerView.bounds.size.width) {
+                        smallScrollView?.contentOffset = CGPointMake(((mobileSize*2+(smallScrollView?.bounds.size.width)!)-smallContainerView.bounds.size.width), 0)
+                    }else{
+                        smallScrollView?.contentOffset = CGPointMake(mobileSize, 0)
+                    }
+                }
+            }
+        }
+        UIView.commitAnimations()
+        
         nextBtn = tmpBtn
+        
+    }
+    
+    func gotoADDetail(targetId: String?, type: String, targetUrl: String?) {
+        
+        let adDetailCtrl = ADDetailViewController()
+        
+        adDetailCtrl.targetId = targetId
+        
+        adDetailCtrl.type = type
+        
+        adDetailCtrl.targetUrl = targetUrl
+        
+        navigationController?.pushViewController(adDetailCtrl, animated: true)
+        
+    }
+    
+    func showRecommendData(model: GSRecommendModel){
+        
+        recommendView?.model = model
+        
+        recommendView?.clickClosure = {
+            [weak self]
+            (targetId: String?, type: String, targetUrl: String?) in
+            
+            self!.gotoADDetail(targetId, type: type, targetUrl: targetUrl)
+            
+        }
+        
+    }
+    
+    func showSelectData(model: GSSelectModel,tag: Int){
+        
+        if tag == 400 {
+            recommendView?.selectModel = model
+            
+            recommendView?.clickClosure = {
+                [weak self]
+                (targetId: String?, type: String, targetUrl: String?) in
+                
+                self!.gotoADDetail(targetId, type: type, targetUrl: targetUrl)
+                
+            }
+        }else{
+            
+            let subView = self.scrollView?.viewWithTag(300+tag)
+            if ((subView?.isKindOfClass(GSOtherView.self)) == true) {
+                
+                let otherView = subView as! GSOtherView
+                otherView.otherModel = model
+                otherView.clickClosure = {
+                    [weak self]
+                    (targetId: String?, type: String, targetUrl: String?) in
+                    
+                    self!.gotoADDetail(targetId, type: type, targetUrl: targetUrl)
+                }
+                
+            }
+            
+        }
         
     }
 
@@ -225,29 +491,74 @@ extension GiftSayViewController : WYPDownloaderDelegate {
         if let jsonData = data {
             if downloader.type == 100 {
                 let model = GSSmallNavBarModel.parseModel(jsonData)
-                candidatesArray = model.data?.candidates
+                candidatesArray = model.data?.channels
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.createSmallNavBarBtn()
+                    [weak self] in
+                    self!.createSmallNavBarBtn()
+                    if model.data?.candidates?.count > 0 {
+                        for i in 0..<(model.data?.candidates?.count)! {
+                            
+                            let id = model.data?.candidates![i].id
+                            self!.otherArray.addObject(id!)
+                            
+                        }
+                        
+                        self!.createHomePageView()
+                        
+                        self!.downloaderAdData()
+                        
+                        self!.downloaderSecondaryBannersData()
+                        
+                        self!.downloaderSelectData()
+                        
+                        self!.downloaderOtherData()
+                        
+                    }
                 })
             }else if downloader.type == 200 {
                 let model = GSRecommendModel.parseModel(jsonData)
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.recommendView?.model = model
+                    [weak self] in
+                    self!.showRecommendData(model)
                 })
             }else if downloader.type == 300 {
                 let model = GSSecondaryBannersModel.parseModel(jsonData)
                 
-                dispatch_async(dispatch_get_main_queue(), { 
-                    self.recommendView?.secondaryBannersModel = model
+                dispatch_async(dispatch_get_main_queue(), {
+                    [weak self] in
+                    self!.recommendView?.secondaryBannersModel = model
                 })
             }else if downloader.type == 400 {
+                
+                /*
+                let str = NSString(data: jsonData, encoding: NSUTF8StringEncoding)
+                print(str!)
+                */
+                
                 let model = GSSelectModel.parseModel(jsonData)
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.recommendView?.selectModel = model
+                    [weak self] in
+                    self!.showSelectData(model,tag: 400)
+                    self!.recommendView?.tbView?.footerView?.endRefreshing()
+                    self!.recommendView?.tbView?.headerView?.endRefreshing()
                 })
+            }else{
+                
+                for i in 0..<otherArray.count {
+                    if downloader.type == 500+i {
+                        let model = GSSelectModel.parseModel(jsonData)
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.showSelectData(model,tag: 500+i)
+                            
+                        })
+                    }
+                    
+                }
+                
             }
         }
         
@@ -255,7 +566,49 @@ extension GiftSayViewController : WYPDownloaderDelegate {
     
 }
 
-
+extension GiftSayViewController : UIScrollViewDelegate {
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x/scrollView.bounds.size.width)
+        
+        let subView = smallScrollView?.viewWithTag(1000+index)
+        if subView?.isKindOfClass(UIButton.self) == true {
+            let tmpBtn = subView as! UIButton
+            if nextBtn != nil {
+                nextBtn?.selected = false
+                nextBtn?.setTitleColor(UIColor.blackColor(), forState: .Normal)
+                tmpBtn.selected = true
+                tmpBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
+            }
+            UIView.beginAnimations("donghua", context: nil)
+            UIView.setAnimationDuration(0.5)
+            UIView.setAnimationRepeatCount(1)
+            UIView.setAnimationDelegate(self)
+            let subView = smallScrollView?.viewWithTag(1000+index+1)
+            let sub = smallScrollView?.viewWithTag(10)
+            if sub?.isKindOfClass(UIView.self) == true {
+                let smallContainerView = sub! as UIView
+                if subView?.isKindOfClass(UIButton.self) == true {
+                    let btn = subView as! UIButton
+                    if ((btn.frame.origin.x+btn.frame.size.width) > smallScrollView?.frame.size.width) && ((smallContainerView.bounds.size.width-tmpBtn.frame.origin.x-(tmpBtn.frame.size.width)/2) > ((smallScrollView?.bounds.size.width)!/2)) {
+                        let mobileSize = (tmpBtn.frame.origin.x-((smallScrollView?.frame.size.width)!/2))+(tmpBtn.frame.size.width/2)
+                        if ((mobileSize+(smallScrollView?.bounds.size.width)!) > smallContainerView.bounds.size.width) {
+                            smallScrollView?.contentOffset = CGPointMake(((mobileSize+(smallScrollView?.bounds.size.width)!)-smallContainerView.bounds.size.width), 0)
+                        }else{
+                            smallScrollView?.contentOffset = CGPointMake(mobileSize, 0)
+                        }
+                    }
+                }
+            }
+            UIView.commitAnimations()
+            
+            nextBtn = tmpBtn
+            
+        }
+        
+    }
+    
+}
 
 
 

@@ -18,7 +18,7 @@ class ProfileLoginCell: UITableViewCell {
     
     func configModel(){
         
-        loginBtn.setBackgroundImage(UIImage(named: "me_profilebackground@2x"), forState: .Normal)
+        loginBtn.setBackgroundImage(UIImage(named: "me_profilebackground@2x.jpg"), forState: .Normal)
         
         loginLabel.text = "登录"
         

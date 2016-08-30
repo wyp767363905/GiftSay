@@ -23,15 +23,9 @@ class BaseViewController: UIViewController {
     
     func addNavTitle(title: String){
         
-        let titleLabel = UILabel.createLabel(title, textAlignment: .Center, font: UIFont.systemFontOfSize(24), textColor: UIColor.blackColor())
+        let titleLabel = UILabel.createLabel(title, textAlignment: .Center, font: UIFont.boldSystemFontOfSize(20), textColor: UIColor.whiteColor())
+        titleLabel.frame = CGRectMake(0, 4, 100, 36)
         navigationItem.titleView = titleLabel
-        
-        titleLabel.snp_makeConstraints { (make) in
-            make.top.equalTo(navigationItem.titleView!).offset(20)
-            make.bottom.equalTo(navigationItem.titleView!)
-            make.right.equalTo(navigationItem.titleView!).offset(0)
-            make.left.equalTo(navigationItem.titleView!).offset(0)
-        }
         
     }
     
@@ -52,7 +46,7 @@ class BaseViewController: UIViewController {
     
     func addNavBackBtn(){
         
-        addNavBtn("", targer: self, action: #selector(backAction), isLeft: true)
+        addNavBtn("back.png", targer: self, action: #selector(backAction), isLeft: true)
         
     }
     

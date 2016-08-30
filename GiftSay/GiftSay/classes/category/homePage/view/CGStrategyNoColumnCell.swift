@@ -24,6 +24,13 @@ class CGStrategyNoColumnCell: UITableViewCell {
     
     func showData(){
         
+        for subView in contentView.subviews {
+            if subView.tag == 300 || subView.tag == 400 {
+                subView.removeFromSuperview()
+            }
+        }
+
+        
         if groupsModel?.id?.integerValue == ChannelGroupsType.Category.rawValue {
             
             let rightBtn = createRightBtn()

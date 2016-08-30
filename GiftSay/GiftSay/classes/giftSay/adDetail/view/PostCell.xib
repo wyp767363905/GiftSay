@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellId" id="KGk-i7-Jjw" customClass="PostCell" customModule="GiftSay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewy-qd-HiP" userLabel="postImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ewy-qd-HiP" secondAttribute="trailing" id="2Zp-Vb-Ety"/>
+                    <constraint firstAttribute="bottom" secondItem="ewy-qd-HiP" secondAttribute="bottom" id="3b9-Yn-NPy"/>
+                    <constraint firstItem="ewy-qd-HiP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bi9-YK-b7v"/>
+                    <constraint firstItem="ewy-qd-HiP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VxP-gL-gtV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="postImageView" destination="ewy-qd-HiP" id="RqO-SD-Dzl"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
