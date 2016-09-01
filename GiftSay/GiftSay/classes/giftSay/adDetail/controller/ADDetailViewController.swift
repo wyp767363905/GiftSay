@@ -37,7 +37,32 @@ class ADDetailViewController: BaseViewController {
             
         }else if type == "url" {
             
+            let str = targetUrl?.stringByRemovingPercentEncoding
+            //下面这种url解码已经弃用
+            //let str = targetUrl?.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            let array = str?.componentsSeparatedByString("url=")
+            var webStr = ""
+            if array?.count > 1 {
+                webStr = array![1]
+            }
             
+            let webView = UIWebView()
+            webView.backgroundColor = UIColor.whiteColor()
+            view.addSubview(webView)
+            
+            webView.snp_makeConstraints(closure: {
+                [weak self]
+                (make) in
+                make.left.right.equalTo(self!.view)
+                make.top.equalTo(self!.view).offset(64)
+                make.bottom.equalTo(self!.view)
+            })
+            
+            let url = NSURL(string: webStr)
+            
+            let request = NSURLRequest(URL: url!)
+            
+            webView.loadRequest(request)
             
         }else if type == "collection" {
             
@@ -86,6 +111,16 @@ class ADDetailViewController: BaseViewController {
             downloader.downloaderWithUrlString(urlString)
         }
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if type == "post" {
+            
+            navigationController?.navigationBar.barTintColor = nil
+            
+        }
     }
     
     func createMyNav(){

@@ -48,7 +48,9 @@ public let kCategoryStrategyNoColumnUrl = "http://api.liwushuo.com/v2/channel_gr
 //单品
 public let kCategoryItemUrl = "http://api.liwushuo.com/v2/item_categories/tree"
 
-
+//我
+//设置按钮里面的推荐应用
+public let kSetUpRecommendedUrl = "http://api.liwushuo.com/v2/apps/ios"
 
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotViewController: BaseViewController {
+class HotViewController: KTCHomeViewController {
     
     private var collView: UICollectionView?
     

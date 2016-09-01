@@ -107,6 +107,8 @@ class MainTabBarController: UITabBarController {
         
         self.viewControllers = NavCtrlArray
         
+        tabBar.hidden = true
+        
         createTabbar(titleNames, imageNames: imageNames)
         
     }
@@ -187,6 +189,24 @@ class MainTabBarController: UITabBarController {
         }
         
         selectedIndex = curBtn.tag - 300
+        
+    }
+    
+    func showTabbar(){
+        
+        UIView.animateWithDuration(0.05) { 
+            [weak self] in
+            self!.tabbarView?.hidden = false
+        }
+        
+    }
+    
+    func hideTabbar(){
+        
+        UIView.animateWithDuration(0.05) {
+            [weak self] in
+            self!.tabbarView?.hidden = true
+        }
         
     }
 

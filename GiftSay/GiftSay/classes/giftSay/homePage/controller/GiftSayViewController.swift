@@ -10,7 +10,7 @@ import UIKit
 
 import XWSwiftRefresh
 
-class GiftSayViewController: BaseViewController {
+class GiftSayViewController: KTCHomeViewController {
     
     private var recommendView: GSRecommendView?
     
@@ -41,7 +41,7 @@ class GiftSayViewController: BaseViewController {
         
     }
     
-    //在这是下载出来的是除了精选之外的瞎子情况?
+    //在这是下载出来的是除了精选之外的视图情况?
     func downloaderOtherData(){
         
         for i in 0..<otherArray.count {
@@ -76,9 +76,11 @@ class GiftSayViewController: BaseViewController {
         let containerView = UIView()
         scrollView?.addSubview(containerView)
         
-        containerView.snp_makeConstraints { (make) in
-            make.edges.equalTo(scrollView!)
-            make.height.equalTo(scrollView!)
+        containerView.snp_makeConstraints {
+            [weak self]
+            (make) in
+            make.edges.equalTo(self!.scrollView!)
+            make.height.equalTo(self!.scrollView!)
         }
         
         //精选视图(特殊)
@@ -98,11 +100,13 @@ class GiftSayViewController: BaseViewController {
                 otherView = GSOtherView()
                 containerView.addSubview(otherView!)
                 
-                otherView?.snp_makeConstraints(closure: { (make) in
+                otherView?.snp_makeConstraints(closure: {
+                    [weak self]
+                    (make) in
                     make.top.bottom.equalTo(containerView)
                     make.width.equalTo(kScreenWidth)
                     if i == 0 {
-                        make.left.equalTo((recommendView?.snp_right)!)
+                        make.left.equalTo((self!.recommendView?.snp_right)!)
                     }else{
                         make.left.equalTo((lastView?.snp_right)!)
                     }
@@ -248,10 +252,15 @@ class GiftSayViewController: BaseViewController {
         
     }
     
-    //导航
-    func createMyNav(){
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         navigationController?.navigationBar.barTintColor = UIColor.redColor()
+
+    }
+    
+    //导航
+    func createMyNav(){
         
         addNavTitle("礼物说")
         
@@ -552,7 +561,8 @@ extension GiftSayViewController : WYPDownloaderDelegate {
                         let model = GSSelectModel.parseModel(jsonData)
                         
                         dispatch_async(dispatch_get_main_queue(), {
-                            self.showSelectData(model,tag: 500+i)
+                            [weak self] in
+                            self!.showSelectData(model,tag: 500+i)
                             
                         })
                     }

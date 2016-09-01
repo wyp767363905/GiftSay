@@ -25,9 +25,48 @@ class ItemAndStrategyCell: UITableViewCell {
             imageView.clipsToBounds = true
         }
         
+        let subBtn = contentView.viewWithTag(100)
+        if subBtn?.isKindOfClass(UIButton.self) == true {
+            
+            let btn = subBtn as! UIButton
+            btn.selected = true
+            btn.backgroundColor = UIColor.redColor()
+            
+        }
+        
     }
     
     @IBAction func clickBtn(sender: UIButton) {
+        
+        let index = sender.tag-100
+        if index == 0 {
+            
+            sender.selected = true
+            sender.backgroundColor = UIColor.redColor()
+            let subBtn = contentView.viewWithTag(101)
+            if subBtn?.isKindOfClass(UIButton.self) == true {
+                
+                let btn = subBtn as! UIButton
+                btn.selected = false
+                btn.backgroundColor = UIColor.whiteColor()
+                
+            }
+            
+        }else if index == 1 {
+            
+            sender.selected = true
+            sender.backgroundColor = UIColor.redColor()
+            let subBtn = contentView.viewWithTag(100)
+            if subBtn?.isKindOfClass(UIButton.self) == true {
+                
+                let btn = subBtn as! UIButton
+                btn.selected = false
+                btn.backgroundColor = UIColor.whiteColor()
+                
+            }
+            
+        }
+        
     }
     
     @IBAction func noLoginAction(sender: UIButton) {

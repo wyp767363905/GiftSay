@@ -42,9 +42,11 @@ class GSSecondaryBannersCell: UITableViewCell {
         let containerView = UIView()
         scrollView?.addSubview(containerView)
         
-        containerView.snp_makeConstraints { (make) in
-            make.edges.equalTo(scrollView!)
-            make.height.equalTo(scrollView!)
+        containerView.snp_makeConstraints {
+            [weak self]
+            (make) in
+            make.edges.equalTo(self!.scrollView!)
+            make.height.equalTo(self!.scrollView!)
         }
         
         var lastView: UIView? = nil

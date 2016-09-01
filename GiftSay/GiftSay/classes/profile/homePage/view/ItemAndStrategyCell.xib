@@ -13,12 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Pm-A7v" userLabel="sheetBtn">
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-Pm-A7v" userLabel="sheetBtn">
                         <rect key="frame" x="0.0" y="0.0" width="188" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="J78-xB-Qlx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <state key="normal" title="单品">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -26,12 +25,11 @@
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6q3-oT-diu"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15G-Z9-nEa" userLabel="strategyBtn">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15G-Z9-nEa" userLabel="strategyBtn">
                         <rect key="frame" x="188" y="0.0" width="187" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="pe7-kV-TsI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <state key="normal" title="攻略">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -39,7 +37,7 @@
                             <action selector="clickBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6ci-cD-erX"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-fg-nrF" userLabel="noLoginBtn">
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-fg-nrF" userLabel="noLoginBtn">
                         <rect key="frame" x="0.0" y="40" width="375" height="259"/>
                         <connections>
                             <action selector="noLoginAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kgj-BF-9Iv"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: KTCHomeViewController {
     
     private var tbView: UITableView?
     
@@ -20,6 +20,13 @@ class ProfileViewController: BaseViewController {
         createMyNav()
         
         createTableView()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.barTintColor = nil
         
     }
     
@@ -58,11 +65,11 @@ class ProfileViewController: BaseViewController {
             }
             
             if i == 2 {
-                btn.setBackgroundImage(UIImage(named: "scan"), forState: .Normal)
+                btn.setBackgroundImage(UIImage(named: "set_up"), forState: .Normal)
             }
             
             if i == 3 {
-                btn.setBackgroundImage(UIImage(named: "set_up"), forState: .Normal)
+                btn.setBackgroundImage(UIImage(named: "scan"), forState: .Normal)
             }
             
             btn.tag = 500+i
@@ -85,6 +92,21 @@ class ProfileViewController: BaseViewController {
     }
     
     func clickBtn(btn: UIButton){
+        
+        let index = btn.tag - 500
+        
+        if index == 0 {
+            
+        }else if index == 1 {
+            
+        }else if index == 2 {
+            
+            let setUpCtrl = SetUpViewController()
+            navigationController?.pushViewController(setUpCtrl, animated: true)
+            
+        }else if index == 3 {
+            
+        }
         
     }
 

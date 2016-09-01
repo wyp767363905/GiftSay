@@ -69,7 +69,7 @@ class CollectionCell: UITableViewCell {
         }else if sender.tag == 101 {
             
         }else if sender.tag == 102 {
-            //collectionModel?.id
+            
             clickClosure!("\((collectionModel?.column?.id)!)", (collectionModel?.type)!, collectionModel?.url)
         }
         

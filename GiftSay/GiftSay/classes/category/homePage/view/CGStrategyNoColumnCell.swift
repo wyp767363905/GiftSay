@@ -96,8 +96,10 @@ class CGStrategyNoColumnCell: UITableViewCell {
         let rightBtn = UIButton.createBtn(nil, bgImageName: nil, selectBgImageName: nil, target: self, action: #selector(rightAction(_:)))
         contentView.addSubview(rightBtn)
         
-        rightBtn.snp_makeConstraints(closure: { (make) in
-            make.top.right.equalTo(contentView)
+        rightBtn.snp_makeConstraints(closure: {
+            [weak self]
+            (make) in
+            make.top.right.equalTo(self!.contentView)
             make.height.equalTo(30)
             make.width.equalTo(80)
         })

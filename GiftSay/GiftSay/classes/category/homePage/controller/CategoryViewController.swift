@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryViewController: BaseViewController {
+class CategoryViewController: KTCHomeViewController {
 
     private var categoryView: CategoryView?
     
