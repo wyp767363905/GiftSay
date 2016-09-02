@@ -12,6 +12,8 @@ class ProfileViewController: KTCHomeViewController {
     
     private var tbView: UITableView?
     
+    var isLogin: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -97,7 +99,17 @@ class ProfileViewController: KTCHomeViewController {
         
         if index == 0 {
             
+            if (!isLogin) {
+                let loginCtrl = LoginViewController()
+                presentViewController(loginCtrl, animated: true, completion: nil)
+            }
+            
         }else if index == 1 {
+            
+            if (!isLogin) {
+                let loginCtrl = LoginViewController()
+                presentViewController(loginCtrl, animated: true, completion: nil)
+            }
             
         }else if index == 2 {
             
@@ -159,6 +171,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
                 cell = NSBundle.mainBundle().loadNibNamed("ProfileLoginCell", owner: nil, options: nil).last as? ProfileLoginCell
             }
             cell?.configModel()
+            cell?.delegate = self
             return cell!
         }else if indexPath.row == 1 {
             let cellId = "functionBtnCellId"
@@ -167,6 +180,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
                 cell = NSBundle.mainBundle().loadNibNamed("FunctionBtnCell", owner: nil, options: nil).last as? FunctionBtnCell
             }
             cell?.configModel()
+            cell?.delegate = self
             return cell!
         }else if indexPath.row == 2 {
             let cellId = "itemAndStrategyCellId"
@@ -175,6 +189,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
                 cell = NSBundle.mainBundle().loadNibNamed("ItemAndStrategyCell", owner: nil, options: nil).last as? ItemAndStrategyCell
             }
             cell?.configModel()
+            cell?.delegate = self
             return cell!
         }
         
@@ -184,9 +199,29 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource {
     
 }
 
+extension ProfileViewController : ProfileLoginCellDelegate {
+    
+    func profileJumpLogin(vc: UIViewController) {
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+}
 
+extension ProfileViewController : FunctionBtnCellDelegate {
+    
+    func functionJumpLogin(vc: UIViewController) {
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+}
 
-
+extension ProfileViewController : ItemAndStrategyCellDelegate {
+    
+    func itemAndStrategyJumpLogin(vc: UIViewController) {
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
+}
 
 
 

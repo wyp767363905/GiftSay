@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ProfileLoginCellDelegate: NSObjectProtocol {
+    
+    func profileJumpLogin(vc: UIViewController)
+    
+}
+
 class ProfileLoginCell: UITableViewCell {
     
     @IBOutlet weak var loginImageView: UIImageView!
@@ -15,6 +21,10 @@ class ProfileLoginCell: UITableViewCell {
     @IBOutlet weak var loginLabel: UILabel!
     
     @IBOutlet weak var loginBtn: UIButton!
+    
+    weak var delegate: ProfileLoginCellDelegate?
+    
+    var isLogin: Bool = false
     
     func configModel(){
         
@@ -32,6 +42,15 @@ class ProfileLoginCell: UITableViewCell {
     }
     
     @IBAction func loginAction(sender: UIButton) {
+        
+        if (!isLogin) {
+            
+            let loginCtrl = LoginViewController()
+            
+            self.delegate?.profileJumpLogin(loginCtrl)
+            
+        }
+        
     }
     
     override func awakeFromNib() {

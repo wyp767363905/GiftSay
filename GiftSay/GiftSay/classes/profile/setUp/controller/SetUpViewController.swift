@@ -206,6 +206,20 @@ extension SetUpViewController : UITableViewDelegate,UITableViewDataSource {
                 
             }
             
+            if indexPath.row == 5 {
+                
+                let sw = UISwitch()
+                cell?.addSubview(sw)
+                
+                sw.snp_makeConstraints(closure: { (make) in
+                    make.right.equalTo(cell!).offset(-20)
+                    make.top.equalTo(cell!).offset(10)
+                    make.width.equalTo(60)
+                    make.height.equalTo(40)
+                })
+                
+            }
+            
             if indexPath.row == 0 || indexPath.row == 3 || indexPath.row == 6 || indexPath.row == 7 || indexPath.row == 8 || indexPath.row == 9 {
                 
                 cell?.smallImageView.image = UIImage(named: "category_arrow_right")

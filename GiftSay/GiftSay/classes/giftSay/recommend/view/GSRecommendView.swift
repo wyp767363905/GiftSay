@@ -50,7 +50,6 @@ class GSRecommendView: UIView {
                     dataArray.append(item)
                 }
                 tbView?.reloadData()
-                
             }
             
         }
@@ -157,8 +156,6 @@ extension GSRecommendView : UITableViewDelegate,UITableViewDataSource {
             
             cell = GSSecondaryBannersCell.createADCellFor(tableView, atIndexPath: indexPath, withModel: secondaryBannersModel!)
         }else if (dataArray.count > 0) && (indexPath.section == 2) {
-//            let dataModel = selectModel?.data
-//            let itemModel = dataModel?.items
 
             cell = GSSelectCell.createSelectCellFor(tableView, atIndexPath: indexPath, withItemsModel: dataArray, clickClosure: clickClosure)
         }

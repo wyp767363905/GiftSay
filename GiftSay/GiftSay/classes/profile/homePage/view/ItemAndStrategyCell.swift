@@ -8,9 +8,19 @@
 
 import UIKit
 
+protocol ItemAndStrategyCellDelegate: NSObjectProtocol {
+    
+    func itemAndStrategyJumpLogin(vc: UIViewController)
+    
+}
+
 class ItemAndStrategyCell: UITableViewCell {
     
     @IBOutlet weak var noLoginLabel: UILabel!
+    
+    weak var delegate: ItemAndStrategyCellDelegate?
+    
+    var isLogin: Bool = false
     
     func configModel() {
         
@@ -70,6 +80,15 @@ class ItemAndStrategyCell: UITableViewCell {
     }
     
     @IBAction func noLoginAction(sender: UIButton) {
+        
+        if !(isLogin) {
+            
+            let loginCtrl = LoginViewController()
+            
+            self.delegate?.itemAndStrategyJumpLogin(loginCtrl)
+            
+        }
+        
     }
     
     override func awakeFromNib() {

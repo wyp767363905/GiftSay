@@ -8,7 +8,17 @@
 
 import UIKit
 
+protocol FunctionBtnCellDelegate: NSObjectProtocol {
+    
+    func functionJumpLogin(vc: UIViewController)
+    
+}
+
 class FunctionBtnCell: UITableViewCell {
+    
+    weak var delegate: FunctionBtnCellDelegate?
+    
+    var isLogin: Bool = false
     
     func configModel(){
         
@@ -39,6 +49,15 @@ class FunctionBtnCell: UITableViewCell {
     }
     
     @IBAction func clickBtn(sender: UIButton) {
+        
+        if (!isLogin) {
+            
+            let loginCtrl = LoginViewController()
+            
+            self.delegate?.functionJumpLogin(loginCtrl)
+            
+        }
+        
     }
     
     override func awakeFromNib() {

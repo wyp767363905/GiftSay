@@ -35,8 +35,12 @@ public let kGiftSayBannersUrl = "http://api.liwushuo.com/v2/secondary_banners?ge
 public var kGiftSaySelectUrl = "http://api.liwushuo.com/v2/channels/%@/items_v2?ad=2&gender=1&generation=3&limit=20&offset=0"
 
 //热门
-public let kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
-
+public var kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
+//单品
+//http://api.liwushuo.com/v2/items/1021260
+//http://api.liwushuo.com/v2/items/1021260/recommend
+//评论
+//http://api.liwushuo.com/v2/items/1021260/comments?limit=20&offset=0
 //分类
 //攻略
 //栏目

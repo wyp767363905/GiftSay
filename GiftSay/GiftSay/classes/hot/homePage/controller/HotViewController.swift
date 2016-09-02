@@ -8,11 +8,17 @@
 
 import UIKit
 
+import XWSwiftRefresh
+
 class HotViewController: KTCHomeViewController {
     
     private var collView: UICollectionView?
     
     var model:HRecommendModel?
+    
+    private lazy var dataArray = NSMutableArray()
+    
+    private var hotType = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,8 @@ class HotViewController: KTCHomeViewController {
         createMyNav()
         
         downloaderHotData()
+        
+        createLayout()
         
     }
     
@@ -43,6 +51,36 @@ class HotViewController: KTCHomeViewController {
         self.collView?.registerNib(nib, forCellWithReuseIdentifier: "recommendHotCellId")
         
         view.addSubview(collView!)
+        
+        addFoot()
+        
+        addHead()
+        
+    }
+    
+    func addFoot(){
+        collView?.footerView = XWRefreshAutoNormalFooter(target: self, action: #selector(loadNextPage))
+    }
+    
+    func loadNextPage(){
+        
+        hotType = 1
+        if model?.data?.paging?.next_url != nil {
+            kHotUrl = (model?.data?.paging?.next_url)!
+            downloaderHotData()
+        }
+        
+    }
+    
+    func addHead(){
+        collView?.headerView = XWRefreshNormalHeader(target: self, action: #selector(loadFirstPage))
+    }
+    
+    func loadFirstPage(){
+        
+        hotType = 0
+        kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
+        downloaderHotData()
         
     }
     
@@ -95,16 +133,23 @@ extension HotViewController: WYPDownloaderDelegate {
     
     func downloader(downloader: WYPDownloader, didFinishWithData data: NSData?) {
         
+        if hotType == 0 {
+            dataArray.removeAllObjects()
+        }
+        
         if let jsonData = data {
             
-            let model = HRecommendModel.parseModel(jsonData)
-            
+            model = HRecommendModel.parseModel(jsonData)
+            if model != nil {
+                for itemsModel in (model?.data?.items)! {
+                    dataArray.addObject(itemsModel)
+                }
+            }
             dispatch_async(dispatch_get_main_queue(), {
-                
                 [weak self] in
-                self!.model = model
-                self!.createLayout()
-                
+                self!.collView?.reloadData()
+                self!.collView?.footerView?.endRefreshing()
+                self!.collView?.headerView?.endRefreshing()
             })
             
         }
@@ -124,17 +169,24 @@ extension HotViewController : HMyLayoutDelegate {
 extension HotViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (model?.data?.items?.count)!
+        
+        var rowNum = 0
+        if dataArray.count > 0 {
+            rowNum += dataArray.count
+        }
+        
+        return rowNum
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         var cell = UICollectionViewCell()
         
-        if model?.data?.items?.count > 0 {
+        if dataArray.count > 0 {
             
-            let itemsModel = model?.data?.items
-            cell = HRecommendCell.createHotCellFor(collectionView, atIndexPath: indexPath, withDataModel: itemsModel!)
+            let array = NSArray(array: dataArray)
+            let itemsModel = array as! [HRecommendItemsModel]
+            cell = HRecommendCell.createHotCellFor(collectionView, atIndexPath: indexPath, withDataModel: itemsModel)
             
         }
         

@@ -70,6 +70,7 @@
 		BC8D048E1D78312D00034608 /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8D048B1D78312D00034608 /* exit.png */; };
 		BC8D048F1D78312D00034608 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8D048C1D78312D00034608 /* message.png */; };
 		BC8D04901D78312D00034608 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8D048D1D78312D00034608 /* phone.png */; };
+		BC8D04921D785F0200034608 /* according_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8D04911D785F0200034608 /* according_arrow.png */; };
 		BC94C7A21D6D2B0B00FE27D9 /* noLogin_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = BC94C7A11D6D2B0B00FE27D9 /* noLogin_heart.png */; };
 		BC9BAA3F1D71D5F000873BEC /* ADDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9BAA3E1D71D5F000873BEC /* ADDetailViewController.swift */; };
 		BC9BAA411D71D6EA00873BEC /* ADPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9BAA401D71D6EA00873BEC /* ADPostModel.swift */; };
@@ -85,11 +86,12 @@
 		BCBF72C31D6C88DA00BACD66 /* FunctionBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBF72C11D6C88DA00BACD66 /* FunctionBtnCell.xib */; };
 		BCBF72C61D6C891300BACD66 /* ItemAndStrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBF72C41D6C891300BACD66 /* ItemAndStrategyCell.swift */; };
 		BCBF72C71D6C891300BACD66 /* ItemAndStrategyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBF72C51D6C891300BACD66 /* ItemAndStrategyCell.xib */; };
+		BCC51F4E1D79B5D80056E22D /* HRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC51F441D79B5D80056E22D /* HRecommendModel.swift */; };
+		BCC51F4F1D79B5D80056E22D /* HMyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC51F461D79B5D80056E22D /* HMyLayout.swift */; };
+		BCC51F501D79B5D80056E22D /* HRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC51F471D79B5D80056E22D /* HRecommendCell.swift */; };
+		BCC51F511D79B5D80056E22D /* HRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC51F481D79B5D80056E22D /* HRecommendCell.xib */; };
+		BCC51F531D79B6110056E22D /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC51F521D79B6110056E22D /* HotViewController.swift */; };
 		BCCB4EA61D67E7C900791BF2 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4EA51D67E7C900791BF2 /* thumb_up.png */; };
-		BCCB4EAC1D680FE400791BF2 /* HRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */; };
-		BCCB4EB01D68442C00791BF2 /* HMyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */; };
-		BCCB4EB31D6899CC00791BF2 /* HRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */; };
-		BCCB4EB41D6899CC00791BF2 /* HRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */; };
 		BCD5122A1D66910700B09155 /* GSSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD512291D66910700B09155 /* GSSelectModel.swift */; };
 		BCE5FB161D76F3DF00594FFE /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5FB151D76F3DF00594FFE /* SetUpViewController.swift */; };
 		BCE5FB181D76FB2800594FFE /* KTCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5FB171D76FB2800594FFE /* KTCHomeViewController.swift */; };
@@ -111,7 +113,6 @@
 		BCF1F1691D61FA6200A23285 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */; };
 		BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */; };
 		BCF1F16D1D61FB7800A23285 /* GiftSayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */; };
-		BCF1F16F1D61FB8600A23285 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F16E1D61FB8600A23285 /* HotViewController.swift */; };
 		BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1701D61FB9300A23285 /* CategoryViewController.swift */; };
 		BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1F1721D61FBA400A23285 /* ProfileViewController.swift */; };
 		BCF1F1751D61FC3200A23285 /* Ctrl.json in Resources */ = {isa = PBXBuildFile; fileRef = BCF1F1741D61FC3200A23285 /* Ctrl.json */; };
@@ -246,6 +247,7 @@
 		BC8D048B1D78312D00034608 /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit.png; sourceTree = "<group>"; };
 		BC8D048C1D78312D00034608 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 		BC8D048D1D78312D00034608 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		BC8D04911D785F0200034608 /* according_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = according_arrow.png; sourceTree = "<group>"; };
 		BC94C7A11D6D2B0B00FE27D9 /* noLogin_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noLogin_heart.png; sourceTree = "<group>"; };
 		BC9BAA3E1D71D5F000873BEC /* ADDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADDetailViewController.swift; sourceTree = "<group>"; };
 		BC9BAA401D71D6EA00873BEC /* ADPostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADPostModel.swift; sourceTree = "<group>"; };
@@ -261,11 +263,12 @@
 		BCBF72C11D6C88DA00BACD66 /* FunctionBtnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunctionBtnCell.xib; sourceTree = "<group>"; };
 		BCBF72C41D6C891300BACD66 /* ItemAndStrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemAndStrategyCell.swift; sourceTree = "<group>"; };
 		BCBF72C51D6C891300BACD66 /* ItemAndStrategyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemAndStrategyCell.xib; sourceTree = "<group>"; };
+		BCC51F441D79B5D80056E22D /* HRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRecommendModel.swift; sourceTree = "<group>"; };
+		BCC51F461D79B5D80056E22D /* HMyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMyLayout.swift; sourceTree = "<group>"; };
+		BCC51F471D79B5D80056E22D /* HRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRecommendCell.swift; sourceTree = "<group>"; };
+		BCC51F481D79B5D80056E22D /* HRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRecommendCell.xib; sourceTree = "<group>"; };
+		BCC51F521D79B6110056E22D /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
 		BCCB4EA51D67E7C900791BF2 /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
-		BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRecommendModel.swift; path = ../../recommend/model/HRecommendModel.swift; sourceTree = "<group>"; };
-		BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HMyLayout.swift; path = ../../recommend/view/HMyLayout.swift; sourceTree = "<group>"; };
-		BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HRecommendCell.swift; path = ../../recommend/view/HRecommendCell.swift; sourceTree = "<group>"; };
-		BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRecommendCell.xib; path = ../../recommend/view/HRecommendCell.xib; sourceTree = "<group>"; };
 		BCD512291D66910700B09155 /* GSSelectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSSelectModel.swift; sourceTree = "<group>"; };
 		BCE5FB151D76F3DF00594FFE /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		BCE5FB171D76FB2800594FFE /* KTCHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTCHomeViewController.swift; sourceTree = "<group>"; };
@@ -287,7 +290,6 @@
 		BCF1F1681D61FA6200A23285 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BCF1F16A1D61FA9D00A23285 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BCF1F16C1D61FB7800A23285 /* GiftSayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftSayViewController.swift; sourceTree = "<group>"; };
-		BCF1F16E1D61FB8600A23285 /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
 		BCF1F1701D61FB9300A23285 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		BCF1F1721D61FBA400A23285 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BCF1F1741D61FC3200A23285 /* Ctrl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ctrl.json; sourceTree = "<group>"; };
@@ -538,46 +540,10 @@
 		BC7C5FBD1D61F1B700A5672F /* hot */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB4EA71D67FD8000791BF2 /* recommend */,
-				BC7C5FBE1D61F1B700A5672F /* homePage */,
+				BCC51F491D79B5D80056E22D /* hotDetail */,
+				BCC51F401D79B5D80056E22D /* homePage */,
 			);
 			path = hot;
-			sourceTree = "<group>";
-		};
-		BC7C5FBE1D61F1B700A5672F /* homePage */ = {
-			isa = PBXGroup;
-			children = (
-				BC7C5FBF1D61F1B700A5672F /* controller */,
-				BC7C5FC11D61F1B700A5672F /* model */,
-				BC7C5FC21D61F1B700A5672F /* view */,
-			);
-			path = homePage;
-			sourceTree = "<group>";
-		};
-		BC7C5FBF1D61F1B700A5672F /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				BCF1F16E1D61FB8600A23285 /* HotViewController.swift */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		BC7C5FC11D61F1B700A5672F /* model */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB4EAB1D680FE400791BF2 /* HRecommendModel.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		BC7C5FC21D61F1B700A5672F /* view */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB4EAF1D68442C00791BF2 /* HMyLayout.swift */,
-				BCCB4EB11D6899CC00791BF2 /* HRecommendCell.swift */,
-				BCCB4EB21D6899CC00791BF2 /* HRecommendCell.xib */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		BC7C5FC31D61F1B700A5672F /* profile */ = {
@@ -775,6 +741,73 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		BCC51F401D79B5D80056E22D /* homePage */ = {
+			isa = PBXGroup;
+			children = (
+				BCC51F411D79B5D80056E22D /* controller */,
+				BCC51F431D79B5D80056E22D /* model */,
+				BCC51F451D79B5D80056E22D /* view */,
+			);
+			path = homePage;
+			sourceTree = "<group>";
+		};
+		BCC51F411D79B5D80056E22D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCC51F521D79B6110056E22D /* HotViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BCC51F431D79B5D80056E22D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BCC51F441D79B5D80056E22D /* HRecommendModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BCC51F451D79B5D80056E22D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BCC51F461D79B5D80056E22D /* HMyLayout.swift */,
+				BCC51F471D79B5D80056E22D /* HRecommendCell.swift */,
+				BCC51F481D79B5D80056E22D /* HRecommendCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BCC51F491D79B5D80056E22D /* hotDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BCC51F4A1D79B5D80056E22D /* controller */,
+				BCC51F4B1D79B5D80056E22D /* model */,
+				BCC51F4C1D79B5D80056E22D /* view */,
+			);
+			path = hotDetail;
+			sourceTree = "<group>";
+		};
+		BCC51F4A1D79B5D80056E22D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BCC51F4B1D79B5D80056E22D /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BCC51F4C1D79B5D80056E22D /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		BCCB4EA21D67E63F00791BF2 /* thumbUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,37 +815,6 @@
 				BCCB4EA51D67E7C900791BF2 /* thumb_up.png */,
 			);
 			path = thumbUp;
-			sourceTree = "<group>";
-		};
-		BCCB4EA71D67FD8000791BF2 /* recommend */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB4EA81D67FD8000791BF2 /* controller */,
-				BCCB4EA91D67FD8000791BF2 /* model */,
-				BCCB4EAA1D67FD8000791BF2 /* view */,
-			);
-			path = recommend;
-			sourceTree = "<group>";
-		};
-		BCCB4EA81D67FD8000791BF2 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		BCCB4EA91D67FD8000791BF2 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		BCCB4EAA1D67FD8000791BF2 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		BCE5FB111D76E22800594FFE /* setUp */ = {
@@ -914,6 +916,7 @@
 		BCFF42501D6486EF00DFBF5D /* arrow */ = {
 			isa = PBXGroup;
 			children = (
+				BC8D04911D785F0200034608 /* according_arrow.png */,
 				BCFFA4D11D6B1DC100D3E05B /* category_arrow_right.png */,
 				BCFF42511D6486EF00DFBF5D /* arrow_down.png */,
 				BCFF42521D6486EF00DFBF5D /* arrow_left.png */,
@@ -1133,6 +1136,7 @@
 				BC7C5FE81D61F1B700A5672F /* appicon40x40@2x.png in Resources */,
 				BC8D048F1D78312D00034608 /* message.png in Resources */,
 				BC7C5FF21D61F1B700A5672F /* LaunchImage-700-Portrait@2x~ipad.png in Resources */,
+				BCC51F511D79B5D80056E22D /* HRecommendCell.xib in Resources */,
 				BCFF42731D6486EF00DFBF5D /* share.png in Resources */,
 				BCE5FB2C1D77210C00594FFE /* clear_cache.png in Resources */,
 				BC7C5FEA1D61F1B700A5672F /* appicon40x40@3x.png in Resources */,
@@ -1147,6 +1151,7 @@
 				BC8D04851D782F6100034608 /* copy_link.png in Resources */,
 				BCFF42901D6491B900DFBF5D /* category_select@2x.png in Resources */,
 				BCBF72BB1D6C80D900BACD66 /* me_profilebackground@2x.jpg in Resources */,
+				BC8D04921D785F0200034608 /* according_arrow.png in Resources */,
 				BCFF42941D6491B900DFBF5D /* gift_select@2x.png in Resources */,
 				BC241E4B1D66F93A004FF30F /* GSSelectCell.xib in Resources */,
 				BC7C5F8C1D61F14400A5672F /* LaunchScreen.storyboard in Resources */,
@@ -1168,7 +1173,6 @@
 				BCFF429B1D6491B900DFBF5D /* mine_normal@3x.png in Resources */,
 				BCE5FB1E1D771BCD00594FFE /* SetUpCell.xib in Resources */,
 				BC8105521D6D644200B83543 /* shopping_cart.png in Resources */,
-				BCCB4EB41D6899CC00791BF2 /* HRecommendCell.xib in Resources */,
 				BC7C5FF61D61F1B700A5672F /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				BC8D04891D782F6100034608 /* weibo.png in Resources */,
 				BCFF42991D6491B900DFBF5D /* hot_select@3x.png in Resources */,
@@ -1270,11 +1274,10 @@
 				BCFF429F1D64ACF800DFBF5D /* GSSmallNavBarModel.swift in Sources */,
 				BC9BAA3F1D71D5F000873BEC /* ADDetailViewController.swift in Sources */,
 				BCF1F17D1D620CEF00A23285 /* WYPDownloader.swift in Sources */,
-				BCF1F16F1D61FB8600A23285 /* HotViewController.swift in Sources */,
 				BCF1F1771D62057800A23285 /* UILabel+Util.swift in Sources */,
 				BC7C5F841D61F14400A5672F /* ViewController.swift in Sources */,
-				BCCB4EB01D68442C00791BF2 /* HMyLayout.swift in Sources */,
 				BC9BAA431D71D71400873BEC /* ADCollectionModel.swift in Sources */,
+				BCC51F531D79B6110056E22D /* HotViewController.swift in Sources */,
 				BC87C3C91D746637005D404F /* CollectionCell.swift in Sources */,
 				BCBF72B91D6C441D00BACD66 /* Util.swift in Sources */,
 				BCF1F1711D61FB9300A23285 /* CategoryViewController.swift in Sources */,
@@ -1292,6 +1295,7 @@
 				BCBF72B31D6C301900BACD66 /* CGStrategyNoColumnModel.swift in Sources */,
 				BCE5FB1D1D771BCD00594FFE /* SetUpCell.swift in Sources */,
 				BCFFA4CF1D6B146000D3E05B /* CGStrategyColumnCell.swift in Sources */,
+				BCC51F4E1D79B5D80056E22D /* HRecommendModel.swift in Sources */,
 				BC5296DD1D73356A00A17CD5 /* PostScrollViewCell.swift in Sources */,
 				BCBF72C61D6C891300BACD66 /* ItemAndStrategyCell.swift in Sources */,
 				BC080EFE1D65F50500E0502D /* GSSecondaryBannersCell.swift in Sources */,
@@ -1299,17 +1303,17 @@
 				BC7C5F821D61F14400A5672F /* AppDelegate.swift in Sources */,
 				BCF1F1791D62058E00A23285 /* UIButton+Util.swift in Sources */,
 				BC65BDA11D6D9352004FCA7E /* GSOtherView.swift in Sources */,
-				BCCB4EB31D6899CC00791BF2 /* HRecommendCell.swift in Sources */,
 				BCBF72BE1D6C88AD00BACD66 /* ProfileLoginCell.swift in Sources */,
 				BC080EF51D65CAC500E0502D /* GSRecommendADCell.swift in Sources */,
 				BCFFA4CC1D6B006300D3E05B /* CategoryView.swift in Sources */,
 				BCF1F1731D61FBA400A23285 /* ProfileViewController.swift in Sources */,
+				BCC51F4F1D79B5D80056E22D /* HMyLayout.swift in Sources */,
 				BCF1F16B1D61FA9D00A23285 /* BaseViewController.swift in Sources */,
+				BCC51F501D79B5D80056E22D /* HRecommendCell.swift in Sources */,
 				BC5296D91D73350300A17CD5 /* PostWebCell.swift in Sources */,
 				BCBF72C21D6C88DA00BACD66 /* FunctionBtnCell.swift in Sources */,
 				BCFF424F1D644D9E00DFBF5D /* GSRecommendModel.swift in Sources */,
 				BC241E4A1D66F93A004FF30F /* GSSelectCell.swift in Sources */,
-				BCCB4EAC1D680FE400791BF2 /* HRecommendModel.swift in Sources */,
 				BC5296CE1D7310E700A17CD5 /* DetailView.swift in Sources */,
 				BC1693F21D6337BA0005F8AC /* Const.swift in Sources */,
 				BC080EF21D65C99100E0502D /* GSRecommendView.swift in Sources */,
