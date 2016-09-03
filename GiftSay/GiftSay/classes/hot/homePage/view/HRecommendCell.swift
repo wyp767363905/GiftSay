@@ -70,8 +70,6 @@ class HRecommendCell: UICollectionViewCell {
         
     }
     
-    @IBAction func detailAction(sender: UIButton) {
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

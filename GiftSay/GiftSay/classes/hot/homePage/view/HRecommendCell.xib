@@ -12,12 +12,6 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="160" height="250"/>
                 <subviews>
-                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shd-w0-h3a" userLabel="detailBtn">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="250"/>
-                        <connections>
-                            <action selector="detailAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="KQe-Ww-yCN"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b11-Xx-o6X" userLabel="bgImageView">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="175"/>
                     </imageView>
@@ -67,16 +61,12 @@
                 <constraint firstAttribute="bottom" secondItem="Lj0-aR-bqi" secondAttribute="bottom" constant="5" id="CKR-Bp-CYf"/>
                 <constraint firstItem="b11-Xx-o6X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E0q-JG-0GB"/>
                 <constraint firstItem="b11-Xx-o6X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="G9k-tb-znX"/>
-                <constraint firstAttribute="trailing" secondItem="Shd-w0-h3a" secondAttribute="trailing" id="GFg-kM-qFT"/>
-                <constraint firstItem="Shd-w0-h3a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NHD-SE-9R2"/>
                 <constraint firstItem="Rrj-ET-0F0" firstAttribute="top" secondItem="b11-Xx-o6X" secondAttribute="bottom" constant="5" id="Par-Uy-MCp"/>
                 <constraint firstAttribute="trailing" secondItem="yS8-Tw-x6V" secondAttribute="trailing" constant="5" id="Yex-Lr-aJw"/>
                 <constraint firstAttribute="trailing" secondItem="Rrj-ET-0F0" secondAttribute="trailing" constant="5" id="ZMq-7b-c9f"/>
                 <constraint firstItem="jjL-tJ-SJF" firstAttribute="top" secondItem="Rrj-ET-0F0" secondAttribute="bottom" constant="5" id="Zzk-IU-0lF"/>
-                <constraint firstItem="Shd-w0-h3a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="acQ-vu-4TA"/>
                 <constraint firstItem="yS8-Tw-x6V" firstAttribute="leading" secondItem="Lj0-aR-bqi" secondAttribute="trailing" constant="5" id="cu1-WH-Wr5"/>
                 <constraint firstItem="jjL-tJ-SJF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fYo-qP-MXZ"/>
-                <constraint firstAttribute="bottom" secondItem="Shd-w0-h3a" secondAttribute="bottom" id="lgt-sc-0hF"/>
                 <constraint firstAttribute="bottom" secondItem="jjL-tJ-SJF" secondAttribute="bottom" constant="5" id="rWg-nn-z1j"/>
             </constraints>
         </collectionViewCell>

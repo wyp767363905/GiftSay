@@ -36,11 +36,12 @@ public var kGiftSaySelectUrl = "http://api.liwushuo.com/v2/channels/%@/items_v2?
 
 //热门
 public var kHotUrl = "http://api.liwushuo.com/v2/items?limit=20&offset=0&gender=1&generation=3"
-//单品
-//http://api.liwushuo.com/v2/items/1021260
-//http://api.liwushuo.com/v2/items/1021260/recommend
+//单品(上面网址传id下来)
+public let kHotDetailItemUrl = "http://api.liwushuo.com/v2/items/%@"
+public let kHotDetailLikeUrl = "http://api.liwushuo.com/v2/items/%@/recommend"
 //评论
-//http://api.liwushuo.com/v2/items/1021260/comments?limit=20&offset=0
+public let kHotCommentsUrl = "http://api.liwushuo.com/v2/items/%@/comments?limit=20&offset=0"
+
 //分类
 //攻略
 //栏目

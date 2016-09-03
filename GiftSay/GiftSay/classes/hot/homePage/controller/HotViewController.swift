@@ -194,6 +194,14 @@ extension HotViewController : UICollectionViewDelegate,UICollectionViewDataSourc
         
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let hotDetailCtrl = HotDetailViewController()
+        
+        navigationController?.pushViewController(hotDetailCtrl, animated: true)
+        
+    }
+    
 }
 
 
