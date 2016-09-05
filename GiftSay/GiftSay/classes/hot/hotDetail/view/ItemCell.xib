@@ -29,10 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-7t-f3Y" userLabel="descLabel">
-                        <rect key="frame" x="10" y="420" width="355" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="8c8-Fj-arK"/>
-                        </constraints>
+                        <rect key="frame" x="10" y="420" width="355" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -55,6 +52,7 @@
                     <constraint firstAttribute="trailing" secondItem="VNh-oS-Yts" secondAttribute="trailing" constant="20" id="VXU-1P-ZAS"/>
                     <constraint firstItem="N1S-7t-f3Y" firstAttribute="top" secondItem="VNh-oS-Yts" secondAttribute="bottom" constant="10" id="aM2-Qc-YnQ"/>
                     <constraint firstItem="iMC-JM-LkF" firstAttribute="top" secondItem="4EB-v2-1Tt" secondAttribute="bottom" constant="10" id="ald-77-fw0"/>
+                    <constraint firstAttribute="bottom" secondItem="N1S-7t-f3Y" secondAttribute="bottom" constant="10" id="bMs-lC-mKT"/>
                     <constraint firstAttribute="trailing" secondItem="iMC-JM-LkF" secondAttribute="trailing" constant="20" id="ejy-Ye-cOK"/>
                     <constraint firstItem="VNh-oS-Yts" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="frW-sH-iky"/>
                     <constraint firstAttribute="trailing" secondItem="4EB-v2-1Tt" secondAttribute="trailing" id="gtr-Tl-gvY"/>

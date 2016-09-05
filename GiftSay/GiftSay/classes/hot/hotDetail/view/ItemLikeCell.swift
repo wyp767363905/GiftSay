@@ -23,8 +23,29 @@ class ItemLikeCell: UITableViewCell {
     }
     
     func showData(){
+                
+        titleLabel.text = "你可能也喜欢"
         
-        let layout = HMyLayout(sectionInsets: UIEdgeInsetsMake(10, 10, 10, 10), itemSpace: 10, lineSpace: 10)
+    }
+    
+    class func createItemCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withDataModel dataModel: HotLikeDataModel) -> ItemLikeCell {
+        
+        let cellId = "itenLikeCellId"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? ItemLikeCell
+        if nil == cell {
+            cell = NSBundle.mainBundle().loadNibNamed("ItemLikeCell", owner: nil, options: nil).last as? ItemLikeCell
+        }
+        cell?.dataModel = dataModel
+        
+        return cell!
+        
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        
+        let layout = HMyLayout(sectionInsets: UIEdgeInsetsMake(0, 10, 10, 10), itemSpace: 10, lineSpace: 10)
         
         layout.delegate = self
         
@@ -33,13 +54,13 @@ class ItemLikeCell: UITableViewCell {
         collView.delegate = self
         collView.dataSource = self
         
+        collView.scrollEnabled = false
+        
         collView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        let nib = UINib(nibName: "HotItemLikeCell", bundle: nil)
+        self.collView?.registerNib(nib, forCellWithReuseIdentifier: "hotItemLikeCellId")
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -65,7 +86,28 @@ extension ItemLikeCell : UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        var cell = UICollectionViewCell()
+        
+        if dataModel?.recommend_items!.count > 0 {
+            
+            let itemsModel = dataModel?.recommend_items
+            cell = HotItemLikeCell.createHotCellFor(collectionView, atIndexPath: indexPath, withItemModel: itemsModel!)
+            
+        }
+        
+        return cell
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        print("=======")
+        
+//        let hotDetailCtrl = HotDetailViewController()
+//        hotDetailCtrl.typeId = dataModel?.recommend_items![indexPath.row].id
+//        hotDetailCtrl.navigationController?.pushViewController(hotDetailCtrl, animated: true)
+        
     }
     
 }

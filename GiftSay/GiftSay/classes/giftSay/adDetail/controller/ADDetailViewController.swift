@@ -161,7 +161,7 @@ class ADDetailViewController: BaseViewController {
                 [weak self]
                 (make) in
                 make.edges.equalTo(self!.view!).inset(UIEdgeInsetsMake(64, 0, 0, 0))
-                })
+            })
             
         }
         

@@ -19,7 +19,7 @@
                             <constraint firstAttribute="height" constant="20" id="5n4-bQ-ZWb"/>
                             <constraint firstAttribute="width" constant="100" id="hWe-VX-fDH"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -63,7 +63,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="collVIew" destination="IJr-Px-NOq" id="epQ-wa-6hS"/>
+                <outlet property="collView" destination="IJr-Px-NOq" id="61P-19-yhv"/>
                 <outlet property="titleLabel" destination="RSu-0z-aWt" id="lPH-OT-7z9"/>
             </connections>
         </tableViewCell>

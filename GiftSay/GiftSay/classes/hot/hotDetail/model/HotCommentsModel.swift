@@ -80,14 +80,14 @@ class CommentsModel: NSObject {
         let model = CommentsModel()
         
         model.content = jsonData["content"].string
-        model.created_at = jsonData["content"].number
-        model.id = jsonData["content"].number
+        model.created_at = jsonData["created_at"].number
+        model.id = jsonData["id"].number
         
-        model.item_id = jsonData["content"].number
-        model.reply_to_id = jsonData["content"].number
-        model.show = jsonData["content"].bool
+        model.item_id = jsonData["item_id"].number
+        model.reply_to_id = jsonData["reply_to_id"].number
+        model.show = jsonData["show"].bool
         
-        model.status = jsonData["content"].number
+        model.status = jsonData["status"].number
         
         var array = Array<CommentsImagesModel>()
         for (_,subjson) in jsonData["images"] {
@@ -96,7 +96,7 @@ class CommentsModel: NSObject {
         }
         model.images = array
         
-        let commentDict = jsonData[""]
+        let commentDict = jsonData["replied_comment"]
         model.replied_comment = CommentsCommentModel.praseModel(commentDict)
         
         let  rUserModel = jsonData["replied_user"]

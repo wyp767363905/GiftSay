@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol KTCHotSegmentCtrlDelegate:NSObjectProtocol {
+    func didSelectSegCtrl(segCtrl: KTCHotSegmentCtrl, atIndex index: Int)
+}
+
 class KTCHotSegmentCtrl: UIView {
+    
+    weak var delegate: KTCHotSegmentCtrlDelegate?
     
     private var lineView: UIView?
     
@@ -71,6 +77,8 @@ class KTCHotSegmentCtrl: UIView {
         if btn.tag != selectIndex+300 {
             
             selectIndex = btn.tag - 300
+            
+            delegate?.didSelectSegCtrl(self, atIndex: selectIndex)
             
         }
         

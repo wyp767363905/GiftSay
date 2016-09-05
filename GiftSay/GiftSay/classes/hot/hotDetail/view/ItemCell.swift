@@ -28,7 +28,51 @@ class ItemCell: UITableViewCell {
     
     func showData(){
         
+        let url = NSURL(string: (dataModel?.cover_image_url)!)
+        bgImageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
         
+        titleLabel.text = (dataModel?.name)!
+        
+        priceLabel.text = (dataModel?.price)!
+        
+        descLabel.text = (dataModel?.desc)!
+        
+        //修改高度
+        let descStr = NSString(string: (dataModel?.desc)!)
+        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        let rect = descStr.boundingRectWithSize(CGSizeMake(kScreenWidth-20, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: dict, context: nil)
+        var height = CGFloat(Int(rect.size.height))
+        if rect.size.height - height > 0 {
+            height += 1
+        }
+        descLabel.snp_makeConstraints { (make) in
+            make.height.equalTo(height)
+        }
+        
+    }
+    
+    class func heightForModel(model: HotItemDataModel) -> CGFloat {
+        
+        var offsetY: CGFloat = 0
+        
+        let picH: CGFloat = 350
+        let spaceY: CGFloat = 10
+        let tH: CGFloat = 20
+        let pH: CGFloat = 20
+        
+        let descStr = NSString(string: model.desc!)
+        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        let rect = descStr.boundingRectWithSize(CGSizeMake(kScreenWidth-20, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: dict, context: nil)
+        
+        var height = CGFloat(Int(rect.size.height))
+        
+        if rect.size.height - height > 0 {
+            height += 1
+        }
+        
+        offsetY = picH+tH+pH+spaceY*4+height
+        
+        return offsetY
         
     }
     

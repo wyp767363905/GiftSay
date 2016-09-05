@@ -74,11 +74,42 @@ extension HotDetailView : UITableViewDelegate,UITableViewDataSource {
         
         var rowNum = 0
         
-        if itemModel?.data != nil || likeModel?.data?.recommend_posts?.count > 0 || likeModel?.data?.recommend_items?.count > 0 {
+        if itemModel?.data != nil && likeModel?.data?.recommend_posts?.count > 0 && likeModel?.data?.recommend_items?.count > 0 {
             rowNum = 1
         }
         
         return rowNum
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var height: CGFloat = 0
+        
+        if indexPath.section == 0 {
+            
+            let model = itemModel?.data
+            if model != nil {
+                height = ItemCell.heightForModel(model!)
+            }
+            
+        }else if indexPath.section == 1 {
+            
+            let model = likeModel?.data
+            if model != nil {
+                height = 160
+            }
+            
+        }else if indexPath.section == 2 {
+            
+            let model = likeModel?.data
+            if model != nil {
+                height = HMyLayout.ToObtainHeight(model!)
+            }
+            
+        }
+                
+        return height
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -91,7 +122,11 @@ extension HotDetailView : UITableViewDelegate,UITableViewDataSource {
             
         }else if indexPath.section == 1 {
             
-        }else if indexPath.section == 1 {
+            cell = ItemRecommendCell.createItemCellFor(tableView, atIndexPath: indexPath, withDataModel: (likeModel?.data)!)
+            
+        }else if indexPath.section == 2 {
+            
+            cell = ItemLikeCell.createItemCellFor(tableView, atIndexPath: indexPath, withDataModel: (likeModel?.data)!)
             
         }
         
