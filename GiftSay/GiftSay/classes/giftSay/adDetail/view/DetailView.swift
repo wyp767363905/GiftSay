@@ -14,7 +14,11 @@ class DetailView: UIView {
     
     private var tbView: UITableView?
     
+    weak var delegate: PostWebCellDelegate?
+    
     var type: String?
+    
+    var h: CGFloat = 0
     
     var postModel: ADPostModel?{
         
@@ -46,8 +50,8 @@ class DetailView: UIView {
         
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: CGRectZero)
         
         tbView = UITableView(frame: CGRectZero, style: .Plain)
         tbView?.delegate = self
@@ -98,44 +102,6 @@ extension DetailView : UITableViewDelegate,UITableViewDataSource {
         return rowNum
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        var height: CGFloat = 0
-        
-        if type == "post" {
-            
-            if postModel?.data != nil {
-                
-                if indexPath.row == 0 {
-                    
-                    height = 140
-                    
-                }else if indexPath.row == 1 {
-                    
-                    height = 537
-                    
-                }else if indexPath.row == 2 {
-                    
-                    height = 170
-                    
-                }
-                
-            }
-            
-        }else if type == "collection" {
-            
-            if collectionModel?.data?.posts?.count > 0 {
-                
-                height = 230
-                
-            }
-            
-        }
-        
-        return height
-        
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = UITableViewCell()
@@ -152,7 +118,7 @@ extension DetailView : UITableViewDelegate,UITableViewDataSource {
                 }else if indexPath.row == 1 {
                     
                     let dataModel = postModel?.data
-                    cell = PostWebCell.createPostWebCellFor(tableView, atIndexPath: indexPath, withDataModel: dataModel!)
+                    cell = PostWebCell.createPostWebCellFor(tableView, atIndexPath: indexPath, withDataModel: dataModel!, delegate: delegate)
                     
                 }else if indexPath.row == 2 {
                     
@@ -178,9 +144,59 @@ extension DetailView : UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var height: CGFloat = 0
+        
+        if type == "post" {
+            
+            if postModel?.data != nil {
+                
+                if indexPath.row == 0 {
+                    
+                    height = 140
+                    
+                }else if indexPath.row == 1 {
+                    
+                    self.delegate = self
+                    
+                    height = h+40
+                    
+                }else if indexPath.row == 2 {
+                    
+                    height = 170
+                    
+                }
+                
+            }
+            
+        }else if type == "collection" {
+            
+            if collectionModel?.data?.posts?.count > 0 {
+                
+                height = 230
+                
+            }
+            
+        }
+        
+        return height
+        
+    }
+    
 }
 
+extension DetailView : PostWebCellDelegate {
+    
+    func heightForRow(height: CGFloat){
+        
+        h = height
 
+        tbView?.reloadData()
+        
+    }
+    
+}
 
 
 

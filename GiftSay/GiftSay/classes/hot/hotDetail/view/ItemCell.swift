@@ -42,7 +42,7 @@ class ItemCell: UITableViewCell {
         let dict = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
         let rect = descStr.boundingRectWithSize(CGSizeMake(kScreenWidth-20, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: dict, context: nil)
         var height = CGFloat(Int(rect.size.height))
-        if rect.size.height - height > 0 {
+        if rect.size.height - height > 0{
             height += 1
         }
         descLabel.snp_makeConstraints { (make) in
@@ -66,7 +66,7 @@ class ItemCell: UITableViewCell {
         
         var height = CGFloat(Int(rect.size.height))
         
-        if rect.size.height - height > 0 {
+        if rect.size.height - height > 0{
             height += 1
         }
         

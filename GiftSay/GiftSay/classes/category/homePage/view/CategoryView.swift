@@ -12,6 +12,10 @@ class CategoryView: UIView {
 
     private var tbView: UITableView?
     
+    weak var delegate: CGStrategyColumnCellDelegate?
+    
+    weak var noDelegate: CGStrategyNoColumnCellDelegate?
+    
     var columnModel: CGStrategyColumnModel?{
         
         didSet {
@@ -116,7 +120,7 @@ extension CategoryView : UITableViewDelegate,UITableViewDataSource {
         if indexPath.section == 0 {
             if columnModel?.data?.columns?.count > 0 {
                 let dataModel = columnModel?.data
-                cell = CGStrategyColumnCell.createColumnCellFor(tableView, atIndexPath: indexPath, withdataModel: dataModel!)
+                cell = CGStrategyColumnCell.createColumnCellFor(tableView, atIndexPath: indexPath, withdataModel: dataModel!, delegate: delegate!)
             }
         }else{
             if noColumnModel?.data?.channel_groups?.count > 0 {
@@ -124,11 +128,11 @@ extension CategoryView : UITableViewDelegate,UITableViewDataSource {
                 let groups = noColumnModel?.data?.channel_groups
                 let num = indexPath.section-1
                 if groups![num].id?.integerValue == ChannelGroupsType.Category.rawValue {
-                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num])
+                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num], delegate: noDelegate!)
                 }else if groups![num].id?.integerValue == ChannelGroupsType.Style.rawValue {
-                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num])
+                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num], delegate: noDelegate!)
                 }else if groups![num].id?.integerValue == ChannelGroupsType.Object.rawValue {
-                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num])
+                    cell = CGStrategyNoColumnCell.createNoColumnCellFor(tableView, atIndexPath: indexPath, withGroupsModel: groups![num], delegate: noDelegate!)
                 }
                 
             }

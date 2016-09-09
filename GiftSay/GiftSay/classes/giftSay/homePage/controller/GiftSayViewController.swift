@@ -365,8 +365,6 @@ class GiftSayViewController: KTCHomeViewController {
     //小导航栏按钮的点击事件
     func clickBtn(tmpBtn: UIButton){
         
-        let index = tmpBtn.tag - 1000
-        
         //点击选中情况
         if nextBtn != nil {
             nextBtn?.selected = false
@@ -379,31 +377,14 @@ class GiftSayViewController: KTCHomeViewController {
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationRepeatCount(1)
         UIView.setAnimationDelegate(self)
-        scrollView?.contentOffset = CGPointMake(kScreenWidth*CGFloat(index), 0)
-        let subView = smallScrollView?.viewWithTag(1000+index+1)
-        let sub = smallScrollView?.viewWithTag(10)
-        if sub?.isKindOfClass(UIView.self) == true {
-            //获取容器视图
-            let smallContainerView = sub! as UIView
-            if subView?.isKindOfClass(UIButton.self) == true {
-                //获取被选中按钮的下一个按钮
-                let btn = subView as! UIButton
-                /*
-                 1.根据选中的btn判断下一个btn是否有部分隐藏在滚动视图里面,如果存在就移动当前的btn
-                 2.判断当前按钮所能移动的位置是不是大于滚动视图视图宽度的一半
-                 */
-                if ((btn.frame.origin.x+btn.frame.size.width) > smallScrollView?.frame.size.width) && ((smallContainerView.bounds.size.width-tmpBtn.frame.origin.x-(tmpBtn.frame.size.width)/2) > ((smallScrollView?.bounds.size.width)!/2)) {
-                    //计算按钮的偏移量
-                    let mobileSize = (tmpBtn.frame.origin.x-((smallScrollView?.frame.size.width)!/2))+(tmpBtn.frame.size.width/2)
-                    //判断如果设置正常的偏移量再加上滚动视图的宽度是否大于容器的宽度如果大于那么
-                    if ((mobileSize+(smallScrollView?.bounds.size.width)!) > smallContainerView.bounds.size.width) {
-                        smallScrollView?.contentOffset = CGPointMake(((mobileSize*2+(smallScrollView?.bounds.size.width)!)-smallContainerView.bounds.size.width), 0)
-                    }else{
-                        smallScrollView?.contentOffset = CGPointMake(mobileSize, 0)
-                    }
-                }
-            }
+        var offsetX = tmpBtn.center.x-(smallScrollView?.center.x)!
+        if offsetX < 0 {
+            offsetX = 0
         }
+        if offsetX > ((smallScrollView?.contentSize.width)!-(smallScrollView?.bounds.size.width)!) {
+            offsetX = (smallScrollView?.contentSize.width)!-(smallScrollView?.bounds.size.width)!
+        }
+        smallScrollView?.contentOffset = CGPointMake(offsetX, 0)
         UIView.commitAnimations()
         
         nextBtn = tmpBtn
@@ -594,22 +575,14 @@ extension GiftSayViewController : UIScrollViewDelegate {
             UIView.setAnimationDuration(0.5)
             UIView.setAnimationRepeatCount(1)
             UIView.setAnimationDelegate(self)
-            let subView = smallScrollView?.viewWithTag(1000+index+1)
-            let sub = smallScrollView?.viewWithTag(10)
-            if sub?.isKindOfClass(UIView.self) == true {
-                let smallContainerView = sub! as UIView
-                if subView?.isKindOfClass(UIButton.self) == true {
-                    let btn = subView as! UIButton
-                    if ((btn.frame.origin.x+btn.frame.size.width) > smallScrollView?.frame.size.width) && ((smallContainerView.bounds.size.width-tmpBtn.frame.origin.x-(tmpBtn.frame.size.width)/2) > ((smallScrollView?.bounds.size.width)!/2)) {
-                        let mobileSize = (tmpBtn.frame.origin.x-((smallScrollView?.frame.size.width)!/2))+(tmpBtn.frame.size.width/2)
-                        if ((mobileSize+(smallScrollView?.bounds.size.width)!) > smallContainerView.bounds.size.width) {
-                            smallScrollView?.contentOffset = CGPointMake(((mobileSize+(smallScrollView?.bounds.size.width)!)-smallContainerView.bounds.size.width), 0)
-                        }else{
-                            smallScrollView?.contentOffset = CGPointMake(mobileSize, 0)
-                        }
-                    }
-                }
+            var offsetX = tmpBtn.center.x-(smallScrollView?.center.x)!
+            if offsetX < 0 {
+                offsetX = 0
             }
+            if offsetX > ((smallScrollView?.contentSize.width)!-(smallScrollView?.bounds.size.width)!) {
+                offsetX = (smallScrollView?.contentSize.width)!-(smallScrollView?.bounds.size.width)!
+            }
+            smallScrollView?.contentOffset = CGPointMake(offsetX, 0)
             UIView.commitAnimations()
             
             nextBtn = tmpBtn

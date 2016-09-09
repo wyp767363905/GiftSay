@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol CGStrategyColumnCellDelegate: NSObjectProtocol {
+    
+    func sendIdWithDetailView(typeId: NSNumber)
+    
+}
+
 class CGStrategyColumnCell: UITableViewCell {
+    
+    weak var delegate: CGStrategyColumnCellDelegate?
 
     @IBOutlet weak var columnLabel: UILabel!
     
@@ -57,7 +65,8 @@ class CGStrategyColumnCell: UITableViewCell {
             var thridBtn: UIButton? = nil
             for i in 0..<(columnsArray?.count)! {
                 
-                let btn = UIButton.createBtn(nil, bgImageName: nil, selectBgImageName: nil, target: self, action: #selector(detailAction))
+                let btn = UIButton.createBtn(nil, bgImageName: nil, selectBgImageName: nil, target: self, action: #selector(detailAction(_:)))
+                btn.tag = 300+i
                 containerView.addSubview(btn)
                 
                 btn.snp_makeConstraints(closure: { (make) in
@@ -170,13 +179,19 @@ class CGStrategyColumnCell: UITableViewCell {
     
     func clickBtn(){
         
-    }
-    
-    func detailAction(){
+        
         
     }
     
-    class func createColumnCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withdataModel dataModel: CGStrategyColumnDataModel) -> CGStrategyColumnCell {
+    func detailAction(btn: UIButton){
+        
+        let index = btn.tag-300
+        let typeId = columnsArray![index].id
+        delegate?.sendIdWithDetailView(typeId!)
+        
+    }
+    
+    class func createColumnCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withdataModel dataModel: CGStrategyColumnDataModel, delegate: CGStrategyColumnCellDelegate) -> CGStrategyColumnCell {
         
         let cellId = "strategyColumnCellId"
         
@@ -187,6 +202,8 @@ class CGStrategyColumnCell: UITableViewCell {
         }
         
         cell?.columnsArray = dataModel.columns
+        
+        cell?.delegate = delegate
         
         return cell!
     }

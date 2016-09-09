@@ -25,7 +25,7 @@ class HotCenterView: UIView {
         
     }
     
-    override init(frame: CGRect) {
+    init() {
         super.init(frame: CGRectZero)
         
         webView = UIWebView()

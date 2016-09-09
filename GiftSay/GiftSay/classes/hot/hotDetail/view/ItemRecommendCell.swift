@@ -48,6 +48,7 @@ class ItemRecommendCell: UITableViewCell {
             let url = NSURL(string: (dataModel?.recommend_posts![i].cover_image_url)!)
             btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
             btn.addTarget(self, action: #selector(clickBtn(_:)), forControlEvents: .TouchUpInside)
+            btn.tag = 600+i
             containerView.addSubview(btn)
             
             btn.snp_makeConstraints(closure: { (make) in
@@ -81,6 +82,9 @@ class ItemRecommendCell: UITableViewCell {
     }
     
     func clickBtn(btn: UIButton) {
+        
+        let index = btn.tag-600
+        dataModel?.recommend_posts![index].id
         
     }
     

@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol PostWebCellDelegate: NSObjectProtocol {
+    func heightForRow(height: CGFloat)
+}
+
 class PostWebCell: UITableViewCell {
+    
+    weak var delegate: PostWebCellDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -32,11 +38,15 @@ class PostWebCell: UITableViewCell {
         
         let request = NSURLRequest(URL: url!)
         
+        webView.delegate = self
+        
+        webView.scrollView.scrollEnabled = false
+        
         webView.loadRequest(request)
         
     }
     
-    class func createPostWebCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withDataModel dataModel: ADPostDataModel) -> PostWebCell {
+    class func createPostWebCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withDataModel dataModel: ADPostDataModel, delegate: PostWebCellDelegate?) -> PostWebCell {
         
         let cellId = "postWebCellId"
         
@@ -47,6 +57,10 @@ class PostWebCell: UITableViewCell {
         }
         
         cell?.dataModel = dataModel
+        
+        cell?.delegate = delegate
+        
+        cell?.updateFocusIfNeeded()
         
         return cell!
     }
@@ -63,3 +77,26 @@ class PostWebCell: UITableViewCell {
     }
     
 }
+
+extension PostWebCell : UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        
+        let webHeightStr = webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight")
+        
+        let height = CGFloat((webHeightStr! as NSString).floatValue)
+                
+        delegate?.heightForRow(CGFloat(height))
+                
+    }
+    
+}
+
+
+
+
+
+
+
+
+

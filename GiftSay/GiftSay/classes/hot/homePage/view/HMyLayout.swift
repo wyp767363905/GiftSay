@@ -130,7 +130,7 @@ class HMyLayout: UICollectionViewLayout {
     class func ToObtainHeight(model: HotLikeDataModel) -> CGFloat {
         
         let spaceY: CGFloat = 10
-        let tH: CGFloat = 20
+        let tH: CGFloat = 10
         let cH: CGFloat = 250
         var num = (model.recommend_items?.count)!/2
         if (model.recommend_items?.count)! % 2 != 0 {

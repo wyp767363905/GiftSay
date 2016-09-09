@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol CGStrategyNoColumnCellDelegate: NSObjectProtocol {
+    
+    func sendIdWithNoDetailView(typeId: NSNumber)
+    
+}
+
 class CGStrategyNoColumnCell: UITableViewCell {
+    
+    weak var delegate: CGStrategyNoColumnCellDelegate?
 
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -128,7 +136,7 @@ class CGStrategyNoColumnCell: UITableViewCell {
         
     }
     
-    class func createNoColumnCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withGroupsModel groupsModel: CGStrategyNoColumnDataGroupsModel) -> CGStrategyNoColumnCell {
+    class func createNoColumnCellFor(tableView: UITableView, atIndexPath indexPath: NSIndexPath, withGroupsModel groupsModel: CGStrategyNoColumnDataGroupsModel, delegate: CGStrategyNoColumnCellDelegate) -> CGStrategyNoColumnCell {
         
         let cellId = "strategyNoColumnCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CGStrategyNoColumnCell
@@ -137,6 +145,8 @@ class CGStrategyNoColumnCell: UITableViewCell {
         }
         
         cell?.groupsModel = groupsModel
+        
+        cell?.delegate = delegate
         
         return cell!
         
@@ -147,6 +157,25 @@ class CGStrategyNoColumnCell: UITableViewCell {
     }
     
     @IBAction func clickBtn(sender: UIButton) {
+        
+        let index = sender.tag-100
+        if groupsModel?.id?.integerValue == ChannelGroupsType.Category.rawValue {
+            
+            let typeId = groupsModel?.channels![index].id
+            delegate?.sendIdWithNoDetailView(typeId!)
+            
+        }else if groupsModel?.id?.integerValue == ChannelGroupsType.Style.rawValue {
+            
+            let typeId = groupsModel?.channels![index].id
+            delegate?.sendIdWithNoDetailView(typeId!)
+            
+        }else if groupsModel?.id?.integerValue == ChannelGroupsType.Object.rawValue {
+            
+            let typeId = groupsModel?.channels![index].id
+            delegate?.sendIdWithNoDetailView(typeId!)
+            
+        }
+        
     }
     
     override func awakeFromNib() {

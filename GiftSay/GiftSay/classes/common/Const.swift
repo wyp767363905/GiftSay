@@ -47,8 +47,42 @@ public let kHotCommentsUrl = "http://api.liwushuo.com/v2/items/%@/comments?limit
 //栏目
 public let kCategoryStrategyColumnUrl = "http://api.liwushuo.com/v2/columns?limit=11&offset=0"
 
+//栏目点击事件详情(上面的id)http://api.liwushuo.com/v2/columns/13?limit=20&offset=0
+public let kColumnDetailUrl = "http://api.liwushuo.com/v2/columns/%ld?limit=20&offset=0"
+
 //除了栏目以外的
 public let kCategoryStrategyNoColumnUrl = "http://api.liwushuo.com/v2/channel_groups/all"
+
+//除了栏目以外的点击详情http://api.liwushuo.com/v2/channels/111/items_v2?limit=20&offset=0
+public let kNoColumnDetailUrl = "http://api.liwushuo.com/v2/channels/%ld/items_v2?limit=20&offset=0"
+
+//搜索点击进入第一个界面内容的网址
+public let kSearchKeyWordsUrl = "http://api.liwushuo.com/v2/search/hot_words"
+
+//点击搜索或者输入搜索内容的网址(keyword后面就是搜索关键字用URL转换的)首先是攻略界面
+//http://api.liwushuo.com/v2/search/post?keyword=%E6%9C%88%E9%A5%BC&limit=20&offset=0&sort=
+
+//后是单品
+//http://api.liwushuo.com/v2/search/item?keyword=%E6%9C%88%E9%A5%BC&limit=20&offset=0&sort=
+
+//热度排行
+//http://api.liwushuo.com/v2/search/item?keyword=%E6%9C%88%E9%A5%BC&limit=20&offset=0&sort=hot
+
+//价格从低到高
+//http://api.liwushuo.com/v2/search/item?keyword=%E6%9C%88%E9%A5%BC&limit=20&offset=0&sort=price%3Aasc
+
+//价格从高到低
+//http://api.liwushuo.com/v2/search/item?keyword=%E6%9C%88%E9%A5%BC&limit=20&offset=0&sort=price%3Adesc
+
+//第一个界面中点击使用选礼神器快速挑选礼物(上面的四个按钮的内容)
+//http://api.liwushuo.com/v2/search/item_filter
+
+//内容(默认情况)
+//http://api.liwushuo.com/v2/search/item_by_type?limit=20&offset=0
+
+//顺序是(personality个性 price价格 scene场合 sort热度 target对象)
+//所有选项都选的情况
+//http://api.liwushuo.com/v2/search/item_by_type?limit=20&offset=0&personality=26&price=0_50&scene=30&sort=hot&target=18
 
 //单品
 public let kCategoryItemUrl = "http://api.liwushuo.com/v2/item_categories/tree"

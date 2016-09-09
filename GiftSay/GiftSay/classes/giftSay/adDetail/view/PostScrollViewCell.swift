@@ -26,43 +26,47 @@ class PostScrollViewCell: UITableViewCell {
     
     func showData(){
         
-        titleLabel.text = "你可能也喜欢"
-        
-        let containerView = UIView()
-        scrollView.addSubview(containerView)
-        
-        containerView.snp_makeConstraints {
-            [weak self]
-            (make) in
-            make.edges.equalTo(self!.scrollView)
-            make.height.equalTo(self!.scrollView)
-        }
-        
-        var lastBtn: UIButton? = nil
-        let width: CGFloat = 260
-        for i in 0..<(dataModel?.recommend_posts?.count)! {
+        if dataModel?.recommend_posts?.count > 0 {
             
-            let btn = UIButton(type: .Custom)
-            let url = NSURL(string: (dataModel?.recommend_posts![i].cover_image_url)!)
-            btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
-            containerView.addSubview(btn)
+            titleLabel.text = "你可能也喜欢"
             
-            btn.snp_makeConstraints(closure: { (make) in
-                make.top.bottom.equalTo(containerView)
-                make.width.equalTo(width)
-                if i == 0 {
-                    make.left.equalTo(containerView)
-                }else{
-                    make.left.equalTo((lastBtn?.snp_right)!).offset(5)
-                }
-            })
+            let containerView = UIView()
+            scrollView.addSubview(containerView)
             
-            lastBtn = btn
+            containerView.snp_makeConstraints {
+                [weak self]
+                (make) in
+                make.edges.equalTo(self!.scrollView)
+                make.height.equalTo(self!.scrollView)
+            }
             
-        }
-        
-        containerView.snp_makeConstraints { (make) in
-            make.right.equalTo(lastBtn!)
+            var lastBtn: UIButton? = nil
+            let width: CGFloat = 260
+            
+            for i in 0..<(dataModel?.recommend_posts?.count)! {
+                
+                let btn = UIButton(type: .Custom)
+                let url = NSURL(string: (dataModel?.recommend_posts![i].cover_image_url)!)
+                btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "preload_image"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                containerView.addSubview(btn)
+                
+                btn.snp_makeConstraints(closure: { (make) in
+                    make.top.bottom.equalTo(containerView)
+                    make.width.equalTo(width)
+                    if i == 0 {
+                        make.left.equalTo(containerView)
+                    }else{
+                        make.left.equalTo((lastBtn?.snp_right)!).offset(5)
+                    }
+                })
+                
+                lastBtn = btn
+                
+            }
+            
+            containerView.snp_makeConstraints { (make) in
+                make.right.equalTo(lastBtn!)
+            }
         }
         
     }

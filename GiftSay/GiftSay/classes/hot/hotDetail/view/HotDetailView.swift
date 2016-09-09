@@ -28,7 +28,7 @@ class HotDetailView: UIView {
         
     }
     
-    override init(frame: CGRect) {
+    init() {
         super.init(frame: CGRectZero)
         
         tbView = UITableView(frame: CGRectZero, style: .Plain)
@@ -94,8 +94,8 @@ extension HotDetailView : UITableViewDelegate,UITableViewDataSource {
             
         }else if indexPath.section == 1 {
             
-            let model = likeModel?.data
-            if model != nil {
+            let num = likeModel?.data?.recommend_posts?.count
+            if num > 0 {
                 height = 160
             }
             

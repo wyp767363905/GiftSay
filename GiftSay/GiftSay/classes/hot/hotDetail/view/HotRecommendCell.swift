@@ -62,10 +62,10 @@ class HotRecommendCell: UITableViewCell {
         commentsLabel.text = (commentsModel?.content)!
         //修改高度
         let descStr = NSString(string: (commentsModel?.content)!)
-        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(16)]
         let rect = descStr.boundingRectWithSize(CGSizeMake(kScreenWidth-10, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: dict, context: nil)
         var height = CGFloat(Int(rect.size.height))
-        if rect.size.height - height > 0 && height > 20 {
+        if rect.size.height - height > 0 {
             height += 1
         }
         
@@ -102,7 +102,7 @@ class HotRecommendCell: UITableViewCell {
         let spaceX: CGFloat = 10
         
         let descStr = NSString(string: (model.content)!)
-        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+        let dict = [NSFontAttributeName: UIFont.systemFontOfSize(16)]
         let rect = descStr.boundingRectWithSize(CGSizeMake(kScreenWidth-10, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: dict, context: nil)
         var height = CGFloat(Int(rect.size.height))
         if rect.size.height - height > 0 {
